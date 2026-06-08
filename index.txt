@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARCHIVOS OSCUROS — Casos Paranormales Sin Resolver</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rojo: #c0392b;
+    --rojo-oscuro: #7b0d0d;
+    --naranja: #e67e22;
+    --oro: #d4a017;
+    --fondo: #050505;
+    --fondo2: #0d0d0d;
+    --fondo3: #111111;
+    --texto: #c8b8a2;
+    --texto-claro: #e8d8c2;
+    --gris: #3a3a3a;
+    --verde-espectro: #00ff88;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+    cursor: crosshair;
+  }
+
+  /* ─── NOISE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #000; }
+  ::-webkit-scrollbar-thumb { background: var(--rojo-oscuro); }
+
+  /* ─── NAVEGACIÓN ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: linear-gradient(180deg, rgba(0,0,0,0.98) 0%, transparent 100%);
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(192,57,43,0.3);
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-logo {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 14px;
+    color: var(--rojo);
+    letter-spacing: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-logo span { color: var(--oro); }
+
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--texto);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0;
+    width: 0; height: 1px;
+    background: var(--rojo);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--rojo); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 10px 22px;
+    border: 1px solid var(--rojo);
+    color: var(--rojo);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  .nav-cta:hover { background: var(--rojo); color: #fff; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 120px 40px 80px;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, rgba(120,0,0,0.25) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 20% 70%, rgba(100,50,0,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 30% 40% at 80% 20%, rgba(0,100,80,0.05) 0%, transparent 60%),
+      #050505;
+  }
+
+  .hero-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(192,57,43,0.04) 50px),
+      repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(192,57,43,0.04) 50px);
+  }
+
+  .hero-content { position: relative; z-index: 2; max-width: 900px; }
+
+  .hero-badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--rojo);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-badge::before, .hero-badge::after {
+    content: '—';
+    color: var(--gris);
+  }
+
+  h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(36px, 7vw, 90px);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--texto-claro);
+    text-shadow: 0 0 80px rgba(192,57,43,0.4), 0 0 160px rgba(192,57,43,0.15);
+    margin-bottom: 12px;
+    animation: flicker 8s infinite;
+  }
+
+  @keyframes flicker {
+    0%, 95%, 100% { opacity: 1; }
+    96% { opacity: 0.85; }
+    97% { opacity: 1; }
+    98% { opacity: 0.7; }
+    99% { opacity: 1; }
+  }
+
+  .h1-sub {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(14px, 3vw, 28px);
+    color: var(--rojo);
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    font-weight: 400;
+  }
+
+  .hero-desc {
+    font-size: 20px;
+    color: var(--texto);
+    max-width: 600px;
+    margin: 0 auto 50px;
+    font-style: italic;
+    opacity: 0.85;
+  }
+
+  .hero-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 16px 40px;
+    background: var(--rojo);
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 1px solid var(--rojo);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transition: left 0.4s;
+  }
+  .btn-primary:hover::before { left: 100%; }
+  .btn-primary:hover { background: var(--rojo-oscuro); box-shadow: 0 0 30px rgba(192,57,43,0.5); }
+
+  .btn-secondary {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 16px 40px;
+    border: 1px solid var(--gris);
+    color: var(--texto);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-secondary:hover { border-color: var(--oro); color: var(--oro); }
+
+  /* ─── STATS BAR ─── */
+  .stats-bar {
+    background: linear-gradient(90deg, #0a0000, #120000, #0a0000);
+    border-top: 1px solid rgba(192,57,43,0.3);
+    border-bottom: 1px solid rgba(192,57,43,0.3);
+    padding: 25px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 32px;
+    color: var(--rojo);
+    display: block;
+    font-weight: 700;
+  }
+  .stat-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gris);
+    text-transform: uppercase;
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 100px 40px; }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  .section-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--rojo);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(24px, 4vw, 48px);
+    color: var(--texto-claro);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .section-line {
+    width: 60px; height: 1px;
+    background: var(--rojo);
+    margin: 20px auto 0;
+  }
+
+  /* ─── CASOS GRID ─── */
+  #casos { background: var(--fondo2); }
+
+  .casos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .caso-card {
+    background: var(--fondo3);
+    border: 1px solid rgba(192,57,43,0.15);
+    padding: 35px 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+    cursor: pointer;
+  }
+  .caso-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--rojo);
+    transition: height 0.4s;
+  }
+  .caso-card:hover { background: #161616; border-color: rgba(192,57,43,0.4); }
+  .caso-card:hover::before { height: 100%; }
+
+  .caso-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--rojo);
+    margin-bottom: 12px;
+    opacity: 0.7;
+  }
+
+  .caso-tipo {
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 3px 10px;
+    border: 1px solid;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .tipo-fantasma { border-color: #5588ff; color: #5588ff; }
+  .tipo-ovni { border-color: var(--verde-espectro); color: var(--verde-espectro); }
+  .tipo-desaparicion { border-color: var(--naranja); color: var(--naranja); }
+  .tipo-criatura { border-color: #aa44ff; color: #aa44ff; }
+  .tipo-maldicion { border-color: var(--rojo); color: var(--rojo); }
+
+  .caso-titulo {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 17px;
+    color: var(--texto-claro);
+    margin-bottom: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .caso-desc {
+    font-size: 15px;
+    color: var(--texto);
+    opacity: 0.8;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .caso-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 15px;
+    margin-top: 5px;
+  }
+
+  .caso-fecha {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--gris);
+  }
+
+  .caso-link {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--rojo);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+  }
+  .caso-link:hover { color: var(--oro); }
+
+  .caso-clasificado {
+    position: absolute;
+    top: 20px; right: 20px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(192,57,43,0.4);
+    border: 1px solid rgba(192,57,43,0.2);
+    padding: 3px 8px;
+  }
+
+  /* ─── FEATURED CASE ─── */
+  .caso-destacado {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    background: linear-gradient(135deg, #0d0000 0%, #0d0505 50%, #000 100%);
+    border: 1px solid rgba(192,57,43,0.3);
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .caso-destacado::before {
+    content: 'CASO DESTACADO';
+    position: absolute;
+    top: 20px; right: 30px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--oro);
+    opacity: 0.6;
+  }
+
+  .featured-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--oro);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .featured-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(22px, 3vw, 38px);
+    color: var(--texto-claro);
+    margin-bottom: 25px;
+    font-weight: 900;
+    line-height: 1.2;
+  }
+
+  .featured-text {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--texto);
+    margin-bottom: 30px;
+    font-style: italic;
+  }
+
+  .featured-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .evidence-item {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(192,57,43,0.2);
+    padding: 20px;
+    position: relative;
+  }
+
+  .evidence-item::before {
+    content: attr(data-num);
+    position: absolute;
+    top: -1px; left: -1px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    background: var(--rojo);
+    color: #fff;
+    padding: 2px 8px;
+    letter-spacing: 1px;
+  }
+
+  .evidence-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--rojo);
+    margin-bottom: 8px;
+    padding-top: 10px;
+  }
+
+  .evidence-text {
+    font-size: 14px;
+    color: var(--texto);
+    opacity: 0.8;
+  }
+
+  /* ─── MEMBRESÍA ─── */
+  #membresia {
+    background: var(--fondo);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #membresia::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(120,0,0,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .planes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .plan-card {
+    background: var(--fondo3);
+    border: 1px solid rgba(192,57,43,0.15);
+    padding: 45px 35px;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s;
+  }
+
+  .plan-card.destacado {
+    background: linear-gradient(180deg, #150000, #0d0000);
+    border-color: var(--rojo);
+    transform: scale(1.02);
+    z-index: 2;
+  }
+
+  .plan-card.destacado::before {
+    content: 'MÁS POPULAR';
+    position: absolute;
+    top: -1px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--rojo);
+    color: #fff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    padding: 5px 20px;
+  }
+
+  .plan-card:hover:not(.destacado) {
+    background: #141414;
+    border-color: rgba(192,57,43,0.35);
+  }
+
+  .plan-nombre {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 20px;
+    color: var(--texto-claro);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .plan-precio {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 48px;
+    color: var(--rojo);
+    font-weight: 900;
+    line-height: 1;
+    margin: 20px 0;
+  }
+
+  .plan-precio span {
+    font-size: 18px;
+    color: var(--gris);
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  .plan-desc {
+    font-size: 14px;
+    color: var(--texto);
+    opacity: 0.7;
+    margin-bottom: 30px;
+    font-style: italic;
+  }
+
+  .plan-features {
+    list-style: none;
+    margin-bottom: 35px;
+    text-align: left;
+  }
+
+  .plan-features li {
+    font-size: 14px;
+    color: var(--texto);
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .plan-features li::before {
+    content: '▸';
+    color: var(--rojo);
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .plan-features li.bloqueado {
+    opacity: 0.3;
+  }
+  .plan-features li.bloqueado::before { content: '✕'; color: var(--gris); }
+
+  .btn-plan {
+    display: block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 14px 30px;
+    border: 1px solid var(--rojo);
+    color: var(--rojo);
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: transparent;
+    width: 100%;
+  }
+  .btn-plan:hover, .plan-card.destacado .btn-plan {
+    background: var(--rojo);
+    color: #fff;
+  }
+  .plan-card.destacado .btn-plan:hover {
+    background: var(--rojo-oscuro);
+  }
+
+  /* ─── DONACIONES ─── */
+  #donaciones {
+    background: var(--fondo2);
+    text-align: center;
+  }
+
+  .donacion-box {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--fondo3);
+    border: 1px solid rgba(192,57,43,0.25);
+    padding: 60px;
+    position: relative;
+  }
+
+  .donacion-box::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(135deg, rgba(192,57,43,0.3), transparent, rgba(212,160,23,0.2));
+    z-index: -1;
+  }
+
+  .donacion-amounts {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
+  }
+
+  .amount-btn {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    padding: 12px 24px;
+    border: 1px solid var(--gris);
+    background: transparent;
+    color: var(--texto);
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+  }
+  .amount-btn:hover, .amount-btn.active {
+    border-color: var(--rojo);
+    color: var(--rojo);
+    background: rgba(192,57,43,0.1);
+  }
+
+  .donacion-input-wrap {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--gris);
+    background: #0a0a0a;
+    padding: 0 20px;
+    max-width: 300px;
+    margin: 0 auto 30px;
+    transition: border-color 0.3s;
+  }
+  .donacion-input-wrap:focus-within { border-color: var(--rojo); }
+
+  .donacion-input-wrap span {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
+    color: var(--rojo);
+    margin-right: 10px;
+  }
+
+  .donacion-input-wrap input {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
+    color: var(--texto-claro);
+    width: 100%;
+    padding: 16px 0;
+  }
+
+  .donacion-nota {
+    font-size: 13px;
+    color: var(--gris);
+    margin-top: 20px;
+    font-style: italic;
+  }
+
+  /* ─── NEWSLETTER ─── */
+  #newsletter {
+    background: linear-gradient(180deg, #0a0000, #050000);
+    border-top: 1px solid rgba(192,57,43,0.2);
+    border-bottom: 1px solid rgba(192,57,43,0.2);
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0;
+    max-width: 520px;
+    margin: 40px auto 0;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    background: #0a0a0a;
+    border: 1px solid var(--gris);
+    border-right: none;
+    padding: 16px 24px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--texto);
+    outline: none;
+    transition: border-color 0.3s;
+    letter-spacing: 1px;
+  }
+  .newsletter-form input:focus { border-color: var(--rojo); }
+  .newsletter-form input::placeholder { color: var(--gris); }
+
+  .newsletter-form button {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 16px 30px;
+    background: var(--rojo);
+    color: #fff;
+    border: 1px solid var(--rojo);
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+  .newsletter-form button:hover { background: var(--rojo-oscuro); }
+
+  .newsletter-disclaimer {
+    font-size: 12px;
+    color: var(--gris);
+    margin-top: 15px;
+    font-style: italic;
+  }
+
+  /* ─── CONTACTO ─── */
+  #contacto { background: var(--fondo); }
+
+  .contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .contacto-info h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 22px;
+    color: var(--texto-claro);
+    margin-bottom: 20px;
+  }
+
+  .contacto-info p {
+    font-size: 16px;
+    color: var(--texto);
+    opacity: 0.8;
+    margin-bottom: 35px;
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  .contacto-datos { list-style: none; }
+  .contacto-datos li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 15px;
+  }
+
+  .contacto-datos .icon {
+    font-size: 16px;
+    color: var(--rojo);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .contacto-datos a {
+    color: var(--texto);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .contacto-datos a:hover { color: var(--rojo); }
+
+  .contacto-form { display: flex; flex-direction: column; gap: 16px; }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+  .form-group label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gris);
+    text-transform: uppercase;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: #0a0a0a;
+    border: 1px solid var(--gris);
+    padding: 14px 18px;
+    font-family: 'Crimson Text', serif;
+    font-size: 16px;
+    color: var(--texto);
+    outline: none;
+    transition: border-color 0.3s;
+    resize: vertical;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--rojo); }
+  .form-group select { cursor: pointer; }
+  .form-group select option { background: #0a0a0a; }
+
+  .form-group textarea { min-height: 130px; }
+
+  .btn-submit {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 16px;
+    background: var(--rojo);
+    color: #fff;
+    border: 1px solid var(--rojo);
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 8px;
+  }
+  .btn-submit:hover { background: var(--rojo-oscuro); box-shadow: 0 0 30px rgba(192,57,43,0.4); }
+
+  /* ─── AFILIADOS / PUBLICIDAD ─── */
+  #afiliados { background: var(--fondo2); }
+
+  .afiliados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .afiliado-card {
+    background: var(--fondo3);
+    border: 1px solid rgba(212,160,23,0.15);
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .afiliado-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--oro), transparent);
+    transform: scaleX(0);
+    transition: transform 0.4s;
+  }
+  .afiliado-card:hover::after { transform: scaleX(1); }
+  .afiliado-card:hover { border-color: rgba(212,160,23,0.35); }
+
+  .afiliado-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  .afiliado-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 16px;
+    color: var(--oro);
+    margin-bottom: 10px;
+  }
+
+  .afiliado-desc {
+    font-size: 14px;
+    color: var(--texto);
+    opacity: 0.7;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .afiliado-link {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--oro);
+    text-decoration: none;
+    border: 1px solid rgba(212,160,23,0.4);
+    padding: 8px 20px;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  .afiliado-link:hover { background: rgba(212,160,23,0.1); }
+
+  /* ─── MERCH BANNER ─── */
+  .merch-banner {
+    background: linear-gradient(135deg, #0d0000, #1a0000, #0d0000);
+    border: 1px solid rgba(192,57,43,0.3);
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 900px;
+    margin: 60px auto 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .merch-banner::before {
+    content: 'TIENDA OFICIAL';
+    position: absolute;
+    top: 15px; right: 25px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--oro);
+    opacity: 0.5;
+  }
+
+  .merch-items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+  }
+
+  .merch-item {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--texto);
+    padding: 8px 20px;
+    border: 1px solid var(--gris);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #000;
+    border-top: 1px solid rgba(192,57,43,0.2);
+    padding: 60px 40px 30px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+  }
+
+  .footer-brand .logo-text {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 18px;
+    color: var(--rojo);
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .footer-brand p {
+    font-size: 14px;
+    color: var(--gris);
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-style: italic;
+  }
+
+  .social-links { display: flex; gap: 12px; }
+  .social-link {
+    width: 36px; height: 36px;
+    border: 1px solid var(--gris);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gris);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
+  }
+  .social-link:hover { border-color: var(--rojo); color: var(--rojo); }
+
+  .footer-col h4 {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--rojo);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    font-size: 14px;
+    color: var(--gris);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-col ul li a:hover { color: var(--texto); }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .footer-bottom p {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--gris);
+    letter-spacing: 2px;
+  }
+
+  .footer-bottom a {
+    color: var(--rojo);
+    text-decoration: none;
+  }
+
+  /* ─── TICKER ─── */
+  .ticker-wrap {
+    background: var(--rojo-oscuro);
+    padding: 10px 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .ticker {
+    display: flex;
+    animation: ticker 40s linear infinite;
+    white-space: nowrap;
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .ticker-item {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.7);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .ticker-item::after {
+    content: '◆';
+    color: rgba(255,255,255,0.3);
+    font-size: 8px;
+  }
+
+  /* ─── MODAL ─── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(4px);
+  }
+  .modal-overlay.active { opacity: 1; pointer-events: all; }
+
+  .modal {
+    background: var(--fondo3);
+    border: 1px solid rgba(192,57,43,0.4);
+    padding: 50px;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .modal-overlay.active .modal { transform: translateY(0); }
+
+  .modal-close {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
+    color: var(--gris);
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: color 0.3s;
+    line-height: 1;
+  }
+  .modal-close:hover { color: var(--rojo); }
+
+  .modal h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 22px;
+    color: var(--texto-claro);
+    margin-bottom: 20px;
+  }
+
+  .modal p {
+    font-size: 16px;
+    color: var(--texto);
+    line-height: 1.7;
+    margin-bottom: 15px;
+  }
+
+  .modal-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--rojo);
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  /* ─── TOAST ─── */
+  .toast {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    background: var(--fondo3);
+    border: 1px solid var(--rojo);
+    border-left: 4px solid var(--rojo);
+    padding: 18px 25px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--texto);
+    letter-spacing: 1px;
+    z-index: 20000;
+    transform: translateX(120%);
+    transition: transform 0.4s;
+    max-width: 320px;
+  }
+  .toast.show { transform: translateX(0); }
+
+  /* ─── LOADING SCREEN ─── */
+  #loading {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: opacity 0.8s, visibility 0.8s;
+  }
+  #loading.hidden { opacity: 0; visibility: hidden; }
+
+  .loading-text {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--rojo);
+    text-transform: uppercase;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .loading-bar {
+    width: 200px; height: 1px;
+    background: var(--gris);
+    position: relative;
+    overflow: hidden;
+  }
+  .loading-bar::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: var(--rojo);
+    animation: load-progress 2s ease forwards;
+  }
+  @keyframes load-progress {
+    to { left: 100%; }
+  }
+
+  /* ─── UTILITIES ─── */
+  .text-center { text-align: center; }
+  .red { color: var(--rojo); }
+  .oro { color: var(--oro); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 15px 20px; }
+    .nav-links { display: none; }
+    section { padding: 70px 20px; }
+    .caso-destacado { grid-template-columns: 1fr; padding: 40px 25px; }
+    .contacto-grid { grid-template-columns: 1fr; gap: 50px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 35px; }
+    .stats-bar { gap: 30px; padding: 20px; }
+    .donacion-box { padding: 40px 25px; }
+    .modal { padding: 35px 25px; }
+    .planes-grid { grid-template-columns: 1fr; }
+    .plan-card.destacado { transform: scale(1); }
+  }
+
+  @media (max-width: 500px) {
+    h1 { font-size: 28px; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .newsletter-form { flex-direction: column; }
+    .newsletter-form input { border-right: 1px solid var(--gris); }
+  }
+
+  /* ─── SCROLL FADE ─── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- LOADING -->
+<div id="loading">
+  <div style="font-family:'Cinzel Decorative',serif;font-size:20px;color:#c0392b;letter-spacing:4px;">ARCHIVOS OSCUROS</div>
+  <div class="loading-bar"></div>
+  <div class="loading-text">CARGANDO ARCHIVOS CLASIFICADOS...</div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✓ Mensaje enviado correctamente</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="cerrarModal()">✕</button>
+    <span class="modal-tag" id="modal-tag"></span>
+    <h3 id="modal-titulo"></h3>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Archivos <span>Oscuros</span></a>
+  <ul class="nav-links">
+    <li><a href="#casos">Casos</a></li>
+    <li><a href="#membresia">Membresía</a></li>
+    <li><a href="#donaciones">Apoyar</a></li>
+    <li><a href="#afiliados">Tienda</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="#membresia" class="nav-cta">Unirse Ahora</a>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap" style="position:fixed;top:0;left:0;right:0;z-index:999;margin-top:61px;">
+  <div class="ticker">
+    <span class="ticker-item">CASO ACTIVO: El Triángulo de las Bermudas — Sin Resolver</span>
+    <span class="ticker-item">NUEVO ARCHIVO: Destino Dyatlov Pass</span>
+    <span class="ticker-item">ALERTA: Avistamiento OVNI reportado en México 2024</span>
+    <span class="ticker-item">INVESTIGACIÓN: La Maldición del Rey Tutankamón</span>
+    <span class="ticker-item">MISTERIO: Los Niños de Woolpit — S. XII</span>
+    <span class="ticker-item">CASO ACTIVO: El Triángulo de las Bermudas — Sin Resolver</span>
+    <span class="ticker-item">NUEVO ARCHIVO: Destino Dyatlov Pass</span>
+    <span class="ticker-item">ALERTA: Avistamiento OVNI reportado en México 2024</span>
+    <span class="ticker-item">INVESTIGACIÓN: La Maldición del Rey Tutankamón</span>
+    <span class="ticker-item">MISTERIO: Los Niños de Woolpit — S. XII</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero" style="padding-top:160px;">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Archivos Clasificados</div>
+    <h1>ARCHIVOS<br>OSCUROS</h1>
+    <div class="h1-sub">Lo que el mundo no puede explicar</div>
+    <p class="hero-desc">Investigamos los casos paranormales más perturbadores de la historia real. Fenómenos inexplicables, desapariciones sin resolver, entidades, OVNIS y misterios que desafían la ciencia.</p>
+    <div class="hero-btns">
+      <a href="#casos" class="btn-primary">Explorar Casos</a>
+      <a href="#membresia" class="btn-secondary">Acceso Completo</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">247</span>
+    <span class="stat-label">Casos Archivados</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">98%</span>
+    <span class="stat-label">Sin Resolver</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">12K+</span>
+    <span class="stat-label">Investigadores</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">63</span>
+    <span class="stat-label">Países Afectados</span>
+  </div>
+</div>
+
+<!-- CASOS -->
+<section id="casos">
+  <div class="section-header fade-in">
+    <span class="section-tag">// Archivos Activos</span>
+    <h2>Casos Sin Resolver</h2>
+    <p style="max-width:550px;margin:15px auto 0;font-style:italic;opacity:0.7;font-size:17px;">Cada uno de estos expedientes permanece abierto. Ninguna autoridad ha podido dar una explicación oficial.</p>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- CASO DESTACADO -->
+  <div class="caso-destacado fade-in">
+    <div>
+      <div class="featured-label">▸ Expediente Nº 001 — DESTACADO</div>
+      <div class="featured-title">El Incidente del Paso Dyatlov</div>
+      <p class="featured-text">En febrero de 1959, nueve esquiadores experimentados murieron en circunstancias absolutamente inexplicables en los Montes Urales, Rusia. Sus tiendas habían sido rasgadas desde adentro. Algunos cuerpos presentaban fracturas de huesos sin marcas externas. Una víctima tenía la lengua arrancada.</p>
+      <p class="featured-text">Las autoridades soviéticas cerraron la zona por 3 años. El expediente oficial dice: "fuerza mayor desconocida". Décadas de investigación no han logrado una respuesta definitiva.</p>
+      <a href="#" class="btn-primary" onclick="abrirModal('EXPEDIENTE Nº 001','El Incidente del Paso Dyatlov','<p>En la noche del 1 al 2 de febrero de 1959, nueve alpinistas del Instituto Politécnico de los Urales establecieron campamento en las laderas del Monte Otorten. Nunca regresaron.</p><p>Las investigaciones encontraron la tienda rasgada desde adentro. Los cuerpos estaban dispersos en un radio de 1,5 km. Algunos estaban semidesnudos pese a las temperaturas de -30°C.</p><p>Detalles inquietantes:<br>• Fracturas costales equivalentes a un accidente de tráfico<br>• Una de las víctimas tenía los ojos y la lengua arrancados<br>• Niveles de radiación anómalos en la ropa<br>• Testigos reportaron esferas luminosas en el cielo esa noche</p><p>El caso fue reabierto en 2019. La conclusión oficial: avalancha. Los familiares y expertos independientes la rechazan.</p>');return false;">Leer Expediente Completo</a>
+    </div>
+    <div class="featured-visual">
+      <div class="evidence-item" data-num="EVD-01">
+        <div class="evidence-title">ESTADO DEL CAMPAMENTO</div>
+        <div class="evidence-text">La tienda fue encontrada rasgada desde el interior. Los investigadores hallaron 8 pares de huellas que conducían al bosque — algunas descalzas sobre la nieve.</div>
+      </div>
+      <div class="evidence-item" data-num="EVD-02">
+        <div class="evidence-title">HALLAZGOS FORENSES</div>
+        <div class="evidence-text">Tres víctimas presentaban fracturas severas de cráneo y costillas. La fuerza necesaria es comparable a un impacto vehicular, pero sin marcas externas en la piel.</div>
+      </div>
+      <div class="evidence-item" data-num="EVD-03">
+        <div class="evidence-title">ANOMALÍAS RADIACTIVAS</div>
+        <div class="evidence-text">Las prendas de dos víctimas emitían radiación beta anormal. Esto nunca fue explicado oficialmente por las autoridades soviéticas.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRID DE CASOS -->
+  <div class="casos-grid fade-in">
+
+    <div class="caso-card" onclick="abrirModal('EXPEDIENTE Nº 002','La Desaparición de Frederick Valentich','<p>El 21 de octubre de 1978, el piloto australiano Frederick Valentich desapareció mientras sobrevolaba el Estrecho de Bass en Australia. Tenía 20 años.</p><p>Durante el vuelo, contactó a control de tráfico aéreo y reportó que una aeronave no identificada lo estaba siguiendo. Sus últimas palabras grabadas: <em>&quot;No sé qué es. Está sobre mí... está estacionado... no es una aeronave.&quot;</em></p><p>Tras 17 segundos de sonido metálico raspante, la comunicación se cortó. Ni él ni su avión fueron jamás encontrados, a pesar de una extensa búsqueda.</p>')">
+      <div class="caso-num">// EXPEDIENTE Nº 002</div>
+      <span class="caso-tipo tipo-ovni">OVNI</span>
+      <div class="caso-clasificado">CLASIFICADO</div>
+      <div class="caso-titulo">La Desaparición de Frederick Valentich</div>
+      <div class="caso-desc">Un piloto reportó un OVNI sobre él. 17 segundos después, desapareció para siempre. Australia, 1978.</div>
+      <div class="caso-meta">
+        <span class="caso-fecha">21 OCT 1978 — AUSTRALIA</span>
+        <a href="#" class="caso-link" onclick="return false;">Leer más ▸</a>
+      </div>
+    </div>
+
+    <div class="caso-card" onclick="abrirModal('EXPEDIENTE Nº 003','Los Niños Verde de Woolpit','<p>En el siglo XII, en el pueblo de Woolpit, Inglaterra, dos niños de piel completamente verde emergieron de unos pozos. Hablaban un idioma desconocido y solo comían habas.</p><p>Con el tiempo aprendieron inglés. La niña sobrevivió y relató que venían de un lugar llamado &quot;San Martín&quot; donde nunca brillaba el sol. Llegaron a través de una cueva tras escuchar el sonido de campanas.</p><p>Dos crónicas medievales independientes documentan el evento. La ciencia moderna no ha podido explicar la coloración verde, el origen, ni la lengua que hablaban.</p>')">
+      <div class="caso-num">// EXPEDIENTE Nº 003</div>
+      <span class="caso-tipo tipo-criatura">CRIATURA</span>
+      <div class="caso-titulo">Los Niños Verde de Woolpit</div>
+      <div class="caso-desc">Dos niños con piel verde emergieron del subsuelo en la Inglaterra medieval. Nadie pudo explicar su origen ni su idioma.</div>
+      <div class="caso-meta">
+        <span class="caso-fecha">S. XII — INGLATERRA</span>
+        <a href="#" class="caso-link" onclick="return false;">Leer más ▸</a>
+      </div>
+    </div>
+
+    <div class="caso-card" onclick="abrirModal('EXPEDIENTE Nº 004','La Maldición de la Tumba de Tutankamón','<p>En 1922, Howard Carter abrió la tumba del faraón Tutankamón en el Valle de los Reyes. Una inscripción advertía: <em>&quot;La muerte tocará con sus alas al que perturbe el sueño del faraón.&quot;</em></p><p>Lord Carnarvon, el financiador de la expedición, murió 4 meses después por una picadura de mosquito que se infectó. En el momento de su muerte, todas las luces de El Cairo se apagaron, y su perro en Inglaterra también murió.</p><p>En los siguientes 10 años, 11 personas que estuvieron en la apertura de la tumba murieron en circunstancias inusuales. El debate científico sobre toxinas fúngicas versus maldición real continúa hasta hoy.</p>')">
+      <div class="caso-num">// EXPEDIENTE Nº 004</div>
+      <span class="caso-tipo tipo-maldicion">MALDICIÓN</span>
+      <div class="caso-titulo">La Maldición de Tutankamón</div>
+      <div class="caso-desc">11 muertes inexplicables tras la apertura de la tumba del faraón en 1922. Coincidencia o algo más oscuro.</div>
+      <div class="caso-meta">
+        <span class="caso-fecha">1922 — EGIPTO</span>
+        <a href="#" class="caso-link" onclick="return false;">Leer más ▸</a>
+      </div>
+    </div>
+
+    <div class="caso-card" onclick="abrirModal('EXPEDIENTE Nº 005','La Casa Amityville','<p>En 1975, la familia Lutz se mudó a una casa en Amityville, Nueva York, donde un año antes Ronald DeFeo Jr. había asesinado a sus seis familiares.</p><p>En solo 28 días, los Lutz huyeron aterrorizados. Sus testimonios incluyen: puertas y ventanas que se abrían solas, olor a cerdo podrido, una figura de cerdo con ojos rojos, paredes sangrantes, voces que ordenaban &quot;¡Vete!&quot; y levitaciones.</p><p>Investigadores paranormales Ed y Lorraine Warren visitaron la casa. Ed dijo que era el lugar más aterrador que había investigado en 30 años de carrera. La casa sigue en pie. Sus actuales dueños han reportado actividad.</p>')">
+      <div class="caso-num">// EXPEDIENTE Nº 005</div>
+      <span class="caso-tipo tipo-fantasma">ESPECTRO</span>
+      <div class="caso-titulo">El Horror de Amityville</div>
+      <div class="caso-desc">Una familia huyó en 28 días. Los investigadores paranormales más reconocidos del mundo confirmaron la actividad sobrenatural.</div>
+      <div class="caso-meta">
+        <span class="caso-fecha">1975 — NUEVA YORK</span>
+        <a href="#" class="caso-link" onclick="return false;">Leer más ▸</a>
+      </div>
+    </div>
+
+    <div class="caso-card" onclick="abrirModal('EXPEDIENTE Nº 006','Las Líneas de Nazca','<p>En el desierto de Nazca, Perú, existen cientos de geoglifos gigantes trazados hace más de 2,000 años. Algunos miden hasta 370 metros. Solo son visibles desde el aire.</p><p>Las culturas que los crearon no tenían tecnología para volar. La precisión geométrica es extraordinaria: líneas perfectamente rectas que se extienden kilómetros sin desviarse.</p><p>Teorías: calendario astronómico, señales para dioses, pistas de aterrizaje extraterrestrte, rituales de agua. Ninguna explica completamente el fenómeno. En 2019 se descubrieron 143 nuevas figuras con drones.</p>')">
+      <div class="caso-num">// EXPEDIENTE Nº 006</div>
+      <span class="caso-tipo tipo-ovni">ANCESTRAL</span>
+      <div class="caso-titulo">Las Líneas de Nazca</div>
+      <div class="caso-desc">Figuras kilométricas solo visibles desde el aire, trazadas hace 2.000 años por culturas sin aviación. La ciencia no tiene respuesta.</div>
+      <div class="caso-meta">
+        <span class="caso-fecha">500 A.C. — PERÚ</span>
+        <a href="#" class="caso-link" onclick="return false;">Leer más ▸</a>
+      </div>
+    </div>
+
+    <div class="caso-card" onclick="abrirModal('EXPEDIENTE Nº 007','El Hombre de Taured','<p>En 1954, en el aeropuerto de Tokio, un hombre europeo fue detenido por presentar documentos de un país llamado &quot;Taured&quot;, que no existía en ningún mapa.</p><p>El hombre estaba genuinamente confundido. Insistió en que Taured existía desde hace miles de años, ubicado entre Francia y España. Mostró su pasaporte con varios sellos de entrada a Japón previos.</p><p>Las autoridades lo alojaron en un hotel bajo vigilancia. A la mañana siguiente, el hombre había desaparecido sin dejar rastro. Sus documentos también desaparecieron de la caja fuerte del aeropuerto.</p><p>El caso está documentado en el libro &quot;The Directory of Possibilities&quot; (1981). Nunca se encontró al hombre.</p>')">
+      <div class="caso-num">// EXPEDIENTE Nº 007</div>
+      <span class="caso-tipo tipo-desaparicion">DIMENSIÓN</span>
+      <div class="caso-titulo">El Hombre de Taured</div>
+      <div class="caso-desc">Un hombre llegó al aeropuerto de Tokio con documentos de un país inexistente. Esa noche desapareció de una habitación vigilada.</div>
+      <div class="caso-meta">
+        <span class="caso-fecha">1954 — JAPÓN</span>
+        <a href="#" class="caso-link" onclick="return false;">Leer más ▸</a>
+      </div>
+    </div>
+
+    <div class="caso-card" onclick="abrirModal('EXPEDIENTE Nº 008','El Teléfono de Rumania','<p>En 1992, en el cementerio Bellu de Bucarest, comenzaron a recibirse llamadas telefónicas desde una tumba. El número correspondía a Constantin Reliu, declarado muerto.</p><p>Las grabaciones muestran una voz que pedía ayuda, decía estar encerrado y que hacía frío. Las llamadas duraban segundos antes de cortarse. Las autoridades abrieron el ataúd y lo encontraron vacío.</p><p>En 2018, Constantin Reliu reapareció vivo en Turquía. Un tribunal rumano rechazó su solicitud de ser declarado vivo porque &quot;había pasado demasiado tiempo&quot;. Las llamadas nunca fueron explicadas.</p>')">
+      <div class="caso-num">// EXPEDIENTE Nº 008</div>
+      <span class="caso-tipo tipo-fantasma">FANTASMA</span>
+      <div class="caso-titulo">Las Llamadas desde la Tumba</div>
+      <div class="caso-desc">Un teléfono en una tumba comenzó a recibir llamadas de un muerto. El ataúd estaba vacío. El "muerto" apareció vivo 26 años después.</div>
+      <div class="caso-meta">
+        <span class="caso-fecha">1992 — RUMANIA</span>
+        <a href="#" class="caso-link" onclick="return false;">Leer más ▸</a>
+      </div>
+    </div>
+
+    <div class="caso-card" onclick="abrirModal('EXPEDIENTE Nº 009','El Sonido de The Hum','<p>Desde los años 70, miles de personas en todo el mundo reportan escuchar un zumbido de baja frecuencia persistente que otros no pueden oír. El fenómeno se conoce como &quot;The Hum&quot;.</p><p>Los afectados describen: vibración en el pecho, insomnio severo, náuseas, sangrado nasal. Algunos han llegado al suicidio. El zumbido de Taos, Nuevo México, llevó al Congreso de EE.UU. a investigar el caso en 1997.</p><p>Los científicos no han identificado la fuente. Las hipótesis incluyen actividad sísmica, ondas VLF militares, y resonancia electromagnética. Los síntomas son reales y documentados médicamente.</p>')">
+      <div class="caso-num">// EXPEDIENTE Nº 009</div>
+      <span class="caso-tipo tipo-desaparicion">FENÓMENO</span>
+      <div class="caso-titulo">El Zumbido Global (The Hum)</div>
+      <div class="caso-desc">Miles de personas en el mundo escuchan un zumbido que otros no oyen. Provoca locura, insomnio y muerte. Nadie sabe su origen.</div>
+      <div class="caso-meta">
+        <span class="caso-fecha">1970-PRESENTE — MUNDIAL</span>
+        <a href="#" class="caso-link" onclick="return false;">Leer más ▸</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;margin-top:50px;" class="fade-in">
+    <a href="#membresia" class="btn-secondary">Ver los 247 casos completos →</a>
+  </div>
+</section>
+
+<!-- MEMBRESÍA -->
+<section id="membresia">
+  <div class="section-header fade-in">
+    <span class="section-tag">// Acceso Completo</span>
+    <h2>Elige Tu Nivel de Acceso</h2>
+    <p style="max-width:500px;margin:15px auto 0;font-style:italic;opacity:0.7;font-size:17px;">Algunos archivos están sellados. Solo los investigadores verificados tienen acceso a la verdad completa.</p>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="planes-grid fade-in">
+
+    <div class="plan-card">
+      <div class="plan-nombre">Observador</div>
+      <div class="plan-desc">Para curiosos del más allá</div>
+      <div class="plan-precio">$0<span>/mes</span></div>
+      <ul class="plan-features">
+        <li>Acceso a 20 casos básicos</li>
+        <li>Newsletter mensual</li>
+        <li>Foro público</li>
+        <li class="bloqueado">Casos clasificados</li>
+        <li class="bloqueado">Archivos de audio</li>
+        <li class="bloqueado">Informes PDF descargables</li>
+        <li class="bloqueado">Chat en vivo</li>
+      </ul>
+      <button class="btn-plan" onclick="mostrarToast('¡Registrado como Observador!')">Comenzar Gratis</button>
+    </div>
+
+    <div class="plan-card destacado">
+      <div class="plan-nombre">Investigador</div>
+      <div class="plan-desc">Para quienes buscan la verdad</div>
+      <div class="plan-precio">$9<span>/mes</span></div>
+      <ul class="plan-features">
+        <li>Acceso a los 247 casos completos</li>
+        <li>Archivos de audio y video originales</li>
+        <li>Informes PDF descargables</li>
+        <li>Casos nuevos cada semana</li>
+        <li>Foro privado de investigadores</li>
+        <li>Newsletter exclusivo</li>
+        <li class="bloqueado">Sesiones en vivo</li>
+      </ul>
+      <button class="btn-plan" onclick="mostrarToast('¡Bienvenido Investigador! Redirigiendo al pago...')">Activar Ahora</button>
+    </div>
+
+    <div class="plan-card">
+      <div class="plan-nombre">Archivista</div>
+      <div class="plan-desc">Acceso total sin restricciones</div>
+      <div class="plan-precio">$19<span>/mes</span></div>
+      <ul class="plan-features">
+        <li>Todo del plan Investigador</li>
+        <li>Sesiones en vivo mensuales</li>
+        <li>Acceso a archivos redactados</li>
+        <li>Tu nombre en los créditos</li>
+        <li>Comunidad privada de Discord</li>
+        <li>Contenido exclusivo anticipado</li>
+        <li>Soporte prioritario por email</li>
+      </ul>
+      <button class="btn-plan" onclick="mostrarToast('Plan Archivista seleccionado. Redirigiendo...')">Acceso Total</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- DONACIONES -->
+<section id="donaciones">
+  <div class="section-header fade-in">
+    <span class="section-tag">// Apoya la Investigación</span>
+    <h2>Mantén los Archivos Abiertos</h2>
+    <p style="max-width:500px;margin:15px auto 0;font-style:italic;opacity:0.7;font-size:17px;">Esta investigación no tiene financiamiento oficial. Depende completamente de quienes creen que la verdad importa.</p>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="donacion-box fade-in">
+    <h3 style="font-family:'Cinzel Decorative',serif;font-size:22px;color:var(--texto-claro);margin-bottom:12px;">Haz una Donación</h3>
+    <p style="font-style:italic;opacity:0.7;font-size:16px;margin-bottom:5px;">Cada aporte financia nuevas investigaciones, digitalización de archivos y mantenimiento del servidor.</p>
+
+    <div class="donacion-amounts">
+      <button class="amount-btn" onclick="setAmount(3)">$3</button>
+      <button class="amount-btn active" onclick="setAmount(5)">$5</button>
+      <button class="amount-btn" onclick="setAmount(10)">$10</button>
+      <button class="amount-btn" onclick="setAmount(25)">$25</button>
+      <button class="amount-btn" onclick="setAmount(50)">$50</button>
+    </div>
+
+    <div class="donacion-input-wrap">
+      <span>$</span>
+      <input type="number" id="donacion-monto" value="5" min="1" placeholder="Monto">
+    </div>
+
+    <button class="btn-primary" style="display:inline-block;margin-bottom:15px;" onclick="procesarDonacion()">
+      Donar Ahora — PayPal / Tarjeta
+    </button>
+
+    <p class="donacion-nota">Las donaciones se procesan de forma segura vía PayPal.<br>Contacto: <a href="mailto:soniacausin72@gmail.com" style="color:var(--rojo);">soniacausin72@gmail.com</a></p>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div id="newsletter">
+  <span class="section-tag">// Transmisión Semanal</span>
+  <h2 style="font-family:'Cinzel Decorative',serif;font-size:clamp(20px,3vw,36px);color:var(--texto-claro);margin-bottom:15px;">Recibe Nuevos Casos Cada Semana</h2>
+  <p style="font-style:italic;opacity:0.7;font-size:17px;max-width:450px;margin:0 auto;">Casos inéditos, teorías actualizadas y archivos exclusivos directo a tu correo. Sin spam. Solo misterios.</p>
+  <div class="newsletter-form">
+    <input type="email" id="newsletter-email" placeholder="tu@correo.com">
+    <button onclick="suscribirse()">Suscribirse</button>
+  </div>
+  <p class="newsletter-disclaimer">Al suscribirte, aceptas recibir el boletín semanal. Puedes darte de baja en cualquier momento.</p>
+</div>
+
+<!-- AFILIADOS -->
+<section id="afiliados">
+  <div class="section-header fade-in">
+    <span class="section-tag">// Recursos & Tienda</span>
+    <h2>Para el Investigador Serio</h2>
+    <p style="max-width:500px;margin:15px auto 0;font-style:italic;opacity:0.7;font-size:17px;">Herramientas, libros y merchandising seleccionados para la comunidad de investigadores paranormales.</p>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="afiliados-grid fade-in">
+    <div class="afiliado-card">
+      <span class="afiliado-icon">📚</span>
+      <div class="afiliado-name">Biblioteca Oscura</div>
+      <div class="afiliado-desc">Los mejores libros sobre casos paranormales reales. Investigaciones documentadas por expertos reconocidos.</div>
+      <a href="mailto:soniacausin72@gmail.com?subject=Info Biblioteca Oscura" class="afiliado-link">Ver Libros</a>
+    </div>
+    <div class="afiliado-card">
+      <span class="afiliado-icon">🎙️</span>
+      <div class="afiliado-name">Podcast Exclusivo</div>
+      <div class="afiliado-desc">Episodios semanales con análisis profundo de casos, entrevistas con investigadores y testimonios reales.</div>
+      <a href="mailto:soniacausin72@gmail.com?subject=Acceso Podcast" class="afiliado-link">Escuchar</a>
+    </div>
+    <div class="afiliado-card">
+      <span class="afiliado-icon">🔦</span>
+      <div class="afiliado-name">Kit Investigador</div>
+      <div class="afiliado-desc">Equipos de detección EMF, grabadoras de voz, cámaras de visión nocturna y más. Afiliados Amazon.</div>
+      <a href="mailto:soniacausin72@gmail.com?subject=Kit Investigador" class="afiliado-link">Ver Equipo</a>
+    </div>
+    <div class="afiliado-card">
+      <span class="afiliado-icon">🗂️</span>
+      <div class="afiliado-name">Cursos Online</div>
+      <div class="afiliado-desc">Aprende metodología de investigación paranormal, análisis de evidencia y documentación de casos.</div>
+      <a href="mailto:soniacausin72@gmail.com?subject=Info Cursos" class="afiliado-link">Ver Cursos</a>
+    </div>
+  </div>
+
+  <!-- MERCH -->
+  <div class="merch-banner fade-in">
+    <h3 style="font-family:'Cinzel Decorative',serif;font-size:24px;color:var(--texto-claro);margin-bottom:10px;">Merchandising Oficial</h3>
+    <p style="font-style:italic;opacity:0.7;font-size:16px;">Lleva los Archivos Oscuros contigo</p>
+    <div class="merch-items">
+      <div class="merch-item">👕 Camisetas</div>
+      <div class="merch-item">📓 Cuadernos de Campo</div>
+      <div class="merch-item">☕ Tazas</div>
+      <div class="merch-item">🖼️ Pósters</div>
+      <div class="merch-item">🎴 Barajas de Casos</div>
+    </div>
+    <a href="mailto:soniacausin72@gmail.com?subject=Tienda Merch" class="btn-primary">Ver Tienda Completa</a>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-header fade-in">
+    <span class="section-tag">// Contacto & Reportes</span>
+    <h2>¿Tienes un Caso?</h2>
+    <p style="max-width:500px;margin:15px auto 0;font-style:italic;opacity:0.7;font-size:17px;">Si has presenciado algo inexplicable, reporta tu caso. Investigamos todas las denuncias con absoluta confidencialidad.</p>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="contacto-grid fade-in">
+    <div class="contacto-info">
+      <h3>Archivos Oscuros</h3>
+      <p>Investigamos, documentamos y archivamos casos paranormales reales de todo el mundo. Tu testimonio puede ser la pieza que falta en un caso sin resolver.</p>
+      <ul class="contacto-datos">
+        <li>
+          <span class="icon">✉</span>
+          <div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gris);margin-bottom:3px;">EMAIL PRINCIPAL</div>
+            <a href="mailto:soniacausin72@gmail.com">soniacausin72@gmail.com</a>
+          </div>
+        </li>
+        <li>
+          <span class="icon">📡</span>
+          <div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gris);margin-bottom:3px;">CASOS URGENTES</div>
+            <span>Respuesta en 24-48 horas</span>
+          </div>
+        </li>
+        <li>
+          <span class="icon">🔒</span>
+          <div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gris);margin-bottom:3px;">CONFIDENCIALIDAD</div>
+            <span>Todos los reportes son 100% anónimos si así lo deseas</span>
+          </div>
+        </li>
+        <li>
+          <span class="icon">🌎</span>
+          <div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gris);margin-bottom:3px;">COBERTURA</div>
+            <span>Investigamos casos de cualquier país</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <form class="contacto-form" onsubmit="enviarFormulario(event)">
+      <div class="form-group">
+        <label>Nombre (o alias)</label>
+        <input type="text" placeholder="Tu nombre o alias..." required>
+      </div>
+      <div class="form-group">
+        <label>Email de contacto</label>
+        <input type="email" placeholder="tu@email.com" required>
+      </div>
+      <div class="form-group">
+        <label>Tipo de caso</label>
+        <select required>
+          <option value="" disabled selected>Seleccionar tipo...</option>
+          <option>Aparición / Fantasma</option>
+          <option>OVNI / Fenómeno Aéreo</option>
+          <option>Desaparición Inexplicable</option>
+          <option>Criatura Desconocida</option>
+          <option>Maldición / Objeto Maldito</option>
+          <option>Fenómeno Dimensional</option>
+          <option>Otro (describir)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Descripción del caso</label>
+        <textarea placeholder="Describe lo que ocurrió con el mayor detalle posible: fecha, lugar, testigos, evidencia disponible..." required></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Enviar Reporte ▸</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo-text">Archivos Oscuros</span>
+      <p>La fuente más completa de investigación paranormal en español. Documentamos lo que la ciencia oficial ignora.</p>
+      <div class="social-links">
+        <a href="mailto:soniacausin72@gmail.com" class="social-link" title="Email">✉</a>
+        <a href="#" class="social-link" title="YouTube">▶</a>
+        <a href="#" class="social-link" title="Instagram">◈</a>
+        <a href="#" class="social-link" title="TikTok">♦</a>
+        <a href="#" class="social-link" title="Spotify">◎</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Investigar</h4>
+      <ul>
+        <li><a href="#casos">Todos los Casos</a></li>
+        <li><a href="#casos">Casos Destacados</a></li>
+        <li><a href="#membresia">Archivos Clasificados</a></li>
+        <li><a href="#newsletter">Podcast</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Comunidad</h4>
+      <ul>
+        <li><a href="#membresia">Membresías</a></li>
+        <li><a href="#donaciones">Donaciones</a></li>
+        <li><a href="#afiliados">Cursos</a></li>
+        <li><a href="#contacto">Reportar Caso</a></li>
+        <li><a href="mailto:soniacausin72@gmail.com">Colaborar</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Aviso Legal</a></li>
+        <li><a href="#">Privacidad</a></li>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">Términos de Uso</a></li>
+        <li><a href="mailto:soniacausin72@gmail.com">Publicidad</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 ARCHIVOS OSCUROS — Todos los derechos reservados — <a href="mailto:soniacausin72@gmail.com">soniacausin72@gmail.com</a></p>
+    <p style="color:var(--rojo);font-size:9px;letter-spacing:3px;">LOS ARCHIVOS PERMANECEN ABIERTOS</p>
+  </div>
+</footer>
+
+<script>
+  // Loading screen
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('loading').classList.add('hidden');
+    }, 2200);
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Modal
+  function abrirModal(tag, titulo, contenido) {
+    document.getElementById('modal-tag').textContent = tag;
+    document.getElementById('modal-titulo').textContent = titulo;
+    document.getElementById('modal-content').innerHTML = contenido;
+    document.getElementById('modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function cerrarModal() {
+    document.getElementById('modal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) cerrarModal();
+  });
+
+  // Toast
+  function mostrarToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+  }
+
+  // Donation amounts
+  function setAmount(n) {
+    document.getElementById('donacion-monto').value = n;
+    document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  function procesarDonacion() {
+    const monto = document.getElementById('donacion-monto').value || '5';
+    const paypalUrl = `https://www.paypal.com/donate/?business=soniacausin72%40gmail.com&amount=${monto}&currency_code=USD&item_name=Donacion+Archivos+Oscuros`;
+    window.open(paypalUrl, '_blank');
+    mostrarToast(`Redirigiendo a PayPal — Donación de $${monto}`);
+  }
+
+  // Newsletter
+  function suscribirse() {
+    const email = document.getElementById('newsletter-email').value;
+    if (!email || !email.includes('@')) {
+      mostrarToast('⚠ Ingresa un email válido');
+      return;
+    }
+    window.location.href = `mailto:soniacausin72@gmail.com?subject=Nueva Suscripción Newsletter&body=Nuevo suscriptor: ${email}`;
+    mostrarToast('✓ ¡Bienvenido a los Archivos Oscuros!');
+  }
+
+  // Contact form
+  function enviarFormulario(e) {
+    e.preventDefault();
+    const form = e.target;
+    const nombre = form.querySelector('input[type=text]').value;
+    const email = form.querySelector('input[type=email]').value;
+    const tipo = form.querySelector('select').value;
+    const desc = form.querySelector('textarea').value;
+
+    const subject = encodeURIComponent(`Nuevo Caso Paranormal: ${tipo}`);
+    const body = encodeURIComponent(
+      `NUEVO REPORTE DE CASO\n\nNombre: ${nombre}\nEmail: ${email}\nTipo: ${tipo}\n\nDescripción:\n${desc}\n\n---\nEnviado desde Archivos Oscuros`
+    );
+
+    window.location.href = `mailto:soniacausin72@gmail.com?subject=${subject}&body=${body}`;
+    mostrarToast('✓ Reporte enviado correctamente');
+    form.reset();
+  }
+
+  // Plan buttons
+  document.querySelectorAll('.btn-plan').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const plan = this.closest('.plan-card').querySelector('.plan-nombre').textContent;
+      if (plan !== 'Observador') {
+        window.location.href = `mailto:soniacausin72@gmail.com?subject=Solicitud Plan ${plan}&body=Hola, quiero activar el plan ${plan} de Archivos Oscuros.`;
+      }
+    });
+  });
+
+  // Keyboard: Escape closes modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') cerrarModal();
+  });
+
+  // Cursor glow effect
+  document.addEventListener('mousemove', (e) => {
+    const glow = document.querySelector('.hero-bg');
+    if (glow) {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,752 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terra Ignota — Lugares Remotos y Misterios Sin Resolver</title>
+<meta name="description" content="Explora los lugares más misteriosos y remotos del mundo. Casos sin resolver, fenómenos inexplicables, viajes extremos y aventuras al límite del conocimiento humano.">
+<meta na
+me="keywords" content="lugares misteriosos, casos sin resolver, viajes remotos, fenómenos inexplicables, misterios del mundo, lugares abandonados, anomalías geográficas">
+<meta name="author" content="Terra Ignota">
+<meta property="og:title" content="Terra Ignota — Misterios Sin Resolver">
+<meta property="og:description" content="Los casos más perturbadores de lugares remotos que la ciencia no puede explicar.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://terragnota.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<!-- ===== GOOGLE ADSENSE — reemplaza con tu código ===== -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-TUNUMERO" crossorigin="anonymous"></script> -->
+
+<style>
+:root {
+  --ink:#0a0805;--parchment:#f5efe6;--amber:#c8833a;--blood:#8b1a1a;
+  --fog:#b8b0a4;--deep:#1a1410;--glow:#e8a84a;--card:#12100d;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--parchment);font-family:'Crimson Pro',serif;font-size:18px;overflow-x:hidden;cursor:none;}
+.cursor{width:8px;height:8px;background:var(--glow);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transition:transform .15s;mix-blend-mode:difference;}
+.cursor-ring{width:32px;height:32px;border:1px solid var(--amber);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transition:all .25s;opacity:.6;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.03;pointer-events:none;z-index:9997;}
+
+/* NAV */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(10,8,5,.97),transparent);backdrop-filter:blur(4px);}
+.logo{font-family:'Playfair Display',serif;font-size:1.3rem;letter-spacing:.3em;text-transform:uppercase;color:var(--glow);text-decoration:none;}
+.logo span{color:var(--fog);font-weight:400;font-size:.7rem;display:block;letter-spacing:.5em;margin-top:2px;}
+nav{display:flex;align-items:center;gap:2rem;}
+nav a{color:var(--fog);text-decoration:none;font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;transition:color .3s;}
+nav a:hover{color:var(--glow);}
+.nav-cta{background:var(--blood);color:var(--parchment)!important;padding:.5rem 1.2rem;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.2em;cursor:pointer;border:none;text-transform:uppercase;transition:background .3s;text-decoration:none;}
+.nav-cta:hover{background:#a02020;}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:6rem 3rem 4rem;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(139,26,26,.15) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(200,131,58,.08) 0%,transparent 50%),linear-gradient(180deg,#0a0805 0%,#150e08 50%,#0a0805 100%);}
+.hero-lines{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(184,176,164,.04) 80px);}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.4em;color:var(--amber);margin-bottom:1.5rem;position:relative;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,9vw,8rem);font-weight:900;line-height:.9;position:relative;max-width:900px;}
+.hero h1 em{font-style:italic;color:var(--amber);display:block;}
+.hero-sub{font-size:1.1rem;font-weight:300;color:var(--fog);max-width:520px;margin-top:2rem;line-height:1.7;position:relative;}
+.hero-actions{display:flex;gap:1rem;margin-top:2.5rem;position:relative;}
+.btn-primary{background:var(--blood);border:none;color:var(--parchment);padding:1rem 2.5rem;font-family:'Playfair Display',serif;font-size:1rem;letter-spacing:.15em;cursor:pointer;transition:all .3s;}
+.btn-primary:hover{background:#a02020;transform:translateY(-2px);}
+.btn-secondary{background:transparent;border:1px solid rgba(200,131,58,.4);color:var(--amber);padding:1rem 2.5rem;font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;cursor:pointer;transition:all .3s;text-transform:uppercase;}
+.btn-secondary:hover{border-color:var(--amber);}
+.hero-stats{position:absolute;bottom:3rem;right:3rem;display:flex;gap:3rem;}
+.stat{text-align:right;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:var(--glow);line-height:1;}
+.stat-label{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;color:var(--fog);text-transform:uppercase;}
+
+/* BAND */
+.band{background:var(--amber);padding:1rem 0;overflow:hidden;}
+.band-inner{display:flex;gap:0;white-space:nowrap;}
+.band-text{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.25em;color:var(--ink);animation:marquee 30s linear infinite;padding-right:0;}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* AD SLOTS */
+.ad-slot{background:var(--deep);border:1px dashed rgba(200,131,58,.2);padding:1.5rem;text-align:center;margin:2rem 3rem;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.2em;color:var(--fog);}
+.ad-slot-wide{margin:0;border-radius:0;border-left:none;border-right:none;}
+
+/* SECTIONS */
+section{padding:5rem 3rem;}
+.section-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.5em;color:var(--amber);text-transform:uppercase;margin-bottom:3rem;display:flex;align-items:center;gap:1.5rem;}
+.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--amber),transparent);}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem;}
+
+/* GENERATOR */
+.gen-wrap{background:var(--deep);border:1px solid rgba(200,131,58,.2);padding:3rem;max-width:860px;margin:0 auto;position:relative;}
+.gen-wrap::before{content:'✦';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--deep);padding:0 1rem;color:var(--amber);font-size:1.2rem;}
+.gen-title{font-family:'Playfair Display',serif;font-size:1.8rem;text-align:center;margin-bottom:.5rem;}
+.gen-sub{text-align:center;color:var(--fog);font-size:.95rem;margin-bottom:2rem;}
+.gen-controls{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1.5rem;}
+.gen-select{background:rgba(255,255,255,.04);border:1px solid rgba(200,131,58,.3);color:var(--parchment);padding:.75rem 1rem;font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.1em;cursor:pointer;appearance:none;outline:none;transition:border-color .3s;}
+.gen-select:hover,.gen-select:focus{border-color:var(--amber);}
+.gen-btn{width:100%;background:var(--blood);border:none;color:var(--parchment);padding:1rem;font-family:'Playfair Display',serif;font-size:1rem;letter-spacing:.2em;cursor:pointer;transition:all .3s;}
+.gen-btn:hover{background:#a02020;transform:translateY(-1px);}
+.gen-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+.output-box{margin-top:2rem;padding:2rem;background:rgba(0,0,0,.3);border-left:3px solid var(--amber);display:none;animation:fadeUp .5s ease;}
+.output-box.show{display:block;}
+.output-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--glow);margin-bottom:.5rem;}
+.output-meta{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--amber);letter-spacing:.3em;margin-bottom:1rem;}
+.output-text{line-height:1.9;color:var(--parchment);font-weight:300;}
+.share-btns{margin-top:1.5rem;display:flex;gap:1rem;}
+.share-btn{background:transparent;border:1px solid rgba(200,131,58,.3);color:var(--amber);padding:.5rem 1.2rem;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.2em;cursor:pointer;transition:all .3s;text-transform:uppercase;}
+.share-btn:hover{border-color:var(--amber);background:rgba(200,131,58,.1);}
+.dots{display:inline-flex;gap:6px;align-items:center;padding:2rem 0;}
+.dots span{width:8px;height:8px;background:var(--amber);border-radius:50%;animation:pulse 1.2s ease-in-out infinite;}
+.dots span:nth-child(2){animation-delay:.2s;}
+.dots span:nth-child(3){animation-delay:.4s;}
+@keyframes pulse{0%,80%,100%{opacity:.2;transform:scale(.8)}40%{opacity:1;transform:scale(1.2)}}
+
+/* CARDS */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2px;margin-top:2rem;}
+.card{background:var(--card);padding:2.5rem;position:relative;overflow:hidden;cursor:pointer;transition:all .4s;border:1px solid transparent;}
+.card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--blood),var(--amber));transform:scaleX(0);transition:transform .4s;transform-origin:left;}
+.card:hover{border-color:rgba(200,131,58,.15);transform:translateY(-3px);}
+.card:hover::before{transform:scaleX(1);}
+.card-tag{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.4em;color:var(--amber);text-transform:uppercase;margin-bottom:1rem;}
+.card-title{font-family:'Playfair Display',serif;font-size:1.25rem;line-height:1.3;margin-bottom:1rem;}
+.card-excerpt{font-size:.9rem;color:var(--fog);line-height:1.7;font-weight:300;}
+.card-footer{margin-top:1.5rem;display:flex;justify-content:space-between;align-items:center;}
+.card-loc{font-family:'DM Mono',monospace;font-size:.58rem;color:var(--fog);letter-spacing:.15em;}
+.card-arrow{color:var(--amber);font-size:1.2rem;transition:transform .3s;}
+.card:hover .card-arrow{transform:translateX(5px);}
+.card-difficulty{font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.2em;padding:.2rem .6rem;border:1px solid;text-transform:uppercase;}
+.diff-alto{color:#e84a4a;border-color:#e84a4a;}
+.diff-medio{color:var(--amber);border-color:var(--amber);}
+.diff-bajo{color:#4ae88a;border-color:#4ae88a;}
+
+/* FEATURED */
+.featured{display:grid;grid-template-columns:1.4fr 1fr;gap:2px;margin-top:3rem;}
+.feat-main{background:var(--card);padding:4rem;border:1px solid rgba(200,131,58,.1);position:relative;overflow:hidden;cursor:pointer;transition:all .4s;}
+.feat-main:hover{border-color:rgba(200,131,58,.3);}
+.feat-main::after{content:'';position:absolute;top:-80px;right:-80px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(139,26,26,.2),transparent 70%);pointer-events:none;}
+.feat-num{font-family:'Playfair Display',serif;font-size:8rem;font-weight:900;color:rgba(200,131,58,.06);line-height:1;position:absolute;top:1rem;right:2rem;}
+.feat-main .card-title{font-size:2rem;line-height:1.2;margin-bottom:1.5rem;}
+.feat-main .card-excerpt{font-size:1rem;}
+.feat-side{display:flex;flex-direction:column;gap:2px;}
+.feat-side .card{flex:1;}
+
+/* RANKING */
+.ranking-list{margin-top:2rem;}
+.rank-item{display:flex;align-items:flex-start;gap:2rem;padding:2rem 0;border-bottom:1px solid rgba(200,131,58,.1);cursor:pointer;transition:all .3s;}
+.rank-item:hover{padding-left:.5rem;}
+.rank-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:rgba(200,131,58,.2);line-height:1;min-width:60px;}
+.rank-content{flex:1;}
+.rank-title{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:.4rem;transition:color .3s;}
+.rank-item:hover .rank-title{color:var(--glow);}
+.rank-desc{font-size:.9rem;color:var(--fog);line-height:1.6;}
+.rank-meta{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;color:var(--amber);margin-top:.5rem;}
+
+/* QUIZ */
+.quiz-wrap{background:var(--deep);border:1px solid rgba(200,131,58,.2);padding:3rem;max-width:700px;margin:0 auto;}
+.quiz-q{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:2rem;line-height:1.4;}
+.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.quiz-opt{background:rgba(255,255,255,.03);border:1px solid rgba(200,131,58,.2);padding:1.2rem;cursor:pointer;transition:all .3s;font-size:.95rem;text-align:left;color:var(--parchment);font-family:'Crimson Pro',serif;}
+.quiz-opt:hover{border-color:var(--amber);background:rgba(200,131,58,.08);}
+.quiz-opt.correct{border-color:#4ae88a;background:rgba(74,232,138,.1);color:#4ae88a;}
+.quiz-opt.wrong{border-color:#e84a4a;background:rgba(232,74,74,.1);color:#e84a4a;}
+.quiz-result{margin-top:1.5rem;padding:1.5rem;background:rgba(0,0,0,.3);border-left:3px solid var(--amber);display:none;}
+.quiz-result.show{display:block;}
+.quiz-nav{margin-top:1.5rem;display:flex;justify-content:space-between;align-items:center;}
+.quiz-progress{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.3em;color:var(--fog);}
+
+/* MAP SECTION */
+.map-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2rem;}
+.map-item{background:var(--card);padding:2rem;border:1px solid rgba(200,131,58,.08);cursor:pointer;transition:all .3s;position:relative;overflow:hidden;}
+.map-item:hover{border-color:rgba(200,131,58,.3);transform:translateY(-2px);}
+.map-coords{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--amber);letter-spacing:.2em;margin-bottom:.5rem;}
+.map-name{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:.3rem;}
+.map-country{font-family:'DM Mono',monospace;font-size:.55rem;color:var(--fog);letter-spacing:.3em;text-transform:uppercase;}
+.map-dot{width:8px;height:8px;background:var(--blood);border-radius:50%;position:absolute;top:1rem;right:1rem;animation:blink 2s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+/* PODCAST / VIDEO */
+.episode-list{margin-top:2rem;}
+.episode{display:flex;align-items:center;gap:2rem;padding:1.5rem 0;border-bottom:1px solid rgba(200,131,58,.1);cursor:pointer;transition:all .3s;}
+.episode:hover{padding-left:.5rem;}
+.ep-play{width:48px;height:48px;background:var(--blood);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform .3s;}
+.episode:hover .ep-play{transform:scale(1.1);}
+.ep-num{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;color:var(--amber);}
+.ep-title{font-family:'Playfair Display',serif;font-size:1.1rem;margin:.2rem 0;}
+.ep-desc{font-size:.85rem;color:var(--fog);}
+.ep-duration{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--fog);margin-left:auto;flex-shrink:0;}
+
+/* NEWSLETTER */
+.subscribe{background:linear-gradient(135deg,var(--blood) 0%,#3d0e0e 100%);padding:5rem 3rem;text-align:center;position:relative;overflow:hidden;}
+.subscribe::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 30px,rgba(255,255,255,.01) 30px,rgba(255,255,255,.01) 31px);}
+.subscribe h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:1rem;position:relative;}
+.subscribe p{color:rgba(245,239,230,.7);max-width:500px;margin:0 auto 2.5rem;font-size:1.05rem;line-height:1.7;position:relative;}
+.sub-form{display:flex;max-width:480px;margin:0 auto;position:relative;}
+.sub-input{flex:1;background:rgba(0,0,0,.4);border:1px solid rgba(245,239,230,.3);border-right:none;color:var(--parchment);padding:1rem 1.5rem;font-family:'Crimson Pro',serif;font-size:1rem;outline:none;}
+.sub-input::placeholder{color:rgba(245,239,230,.4);}
+.sub-btn{background:var(--glow);border:none;color:var(--ink);padding:1rem 2rem;font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;cursor:pointer;font-weight:500;transition:background .3s;text-transform:uppercase;white-space:nowrap;}
+.sub-btn:hover{background:#f0c060;}
+.sub-perks{display:flex;justify-content:center;gap:3rem;margin-top:2.5rem;position:relative;}
+.perk{text-align:center;}
+.perk-icon{font-size:1.5rem;margin-bottom:.5rem;}
+.perk-text{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.2em;color:rgba(245,239,230,.6);text-transform:uppercase;}
+
+/* AFFILIATE */
+.aff-section{padding:4rem 3rem;background:#0d0a06;}
+.aff-intro{max-width:600px;margin:0 auto 3rem;text-align:center;}
+.aff-intro p{color:var(--fog);line-height:1.7;}
+.aff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.aff-card{background:var(--card);padding:2rem;text-align:center;border:1px solid rgba(200,131,58,.1);cursor:pointer;transition:all .3s;text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden;}
+.aff-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(200,131,58,.04));opacity:0;transition:opacity .3s;}
+.aff-card:hover{border-color:var(--amber);transform:translateY(-3px);}
+.aff-card:hover::before{opacity:1;}
+.aff-icon{font-size:2rem;margin-bottom:.75rem;}
+.aff-name{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;color:var(--amber);text-transform:uppercase;margin-bottom:.5rem;}
+.aff-desc{font-size:.85rem;color:var(--fog);margin-bottom:1rem;line-height:1.5;}
+.aff-commission{font-family:'DM Mono',monospace;font-size:.6rem;color:#4ae88a;letter-spacing:.2em;}
+.aff-badge{position:absolute;top:.75rem;right:.75rem;background:var(--blood);font-family:'DM Mono',monospace;font-size:.45rem;letter-spacing:.2em;padding:.2rem .5rem;color:var(--parchment);text-transform:uppercase;}
+
+/* FOOTER */
+footer{background:#060503;padding:4rem 3rem 2rem;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:3rem;}
+.footer-brand .logo{font-size:1.1rem;display:block;margin-bottom:1rem;}
+.footer-brand p{font-size:.9rem;color:var(--fog);line-height:1.7;max-width:280px;}
+.footer-col h4{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.4em;color:var(--amber);text-transform:uppercase;margin-bottom:1.2rem;}
+.footer-col a{display:block;color:var(--fog);text-decoration:none;font-size:.9rem;margin-bottom:.6rem;transition:color .3s;}
+.footer-col a:hover{color:var(--parchment);}
+.footer-bottom{border-top:1px solid rgba(200,131,58,.1);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;color:var(--fog);}
+.footer-legal{display:flex;gap:2rem;}
+.footer-legal a{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:var(--fog);text-decoration:none;transition:color .3s;}
+.footer-legal a:hover{color:var(--amber);}
+.donate-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--deep);border:1px solid rgba(200,131,58,.3);color:var(--amber);padding:.6rem 1.2rem;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.2em;cursor:pointer;transition:all .3s;text-decoration:none;text-transform:uppercase;}
+.donate-btn:hover{border-color:var(--amber);background:rgba(200,131,58,.08);}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(10,8,5,.96);z-index:200;display:none;overflow-y:auto;backdrop-filter:blur(8px);}
+.modal-overlay.open{display:block;animation:fadeUp .3s ease;}
+.modal-content{max-width:740px;margin:6rem auto;padding:0 2rem 6rem;}
+.modal-close{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.3em;color:var(--fog);background:none;border:none;cursor:pointer;margin-bottom:3rem;display:flex;align-items:center;gap:.5rem;transition:color .3s;padding:0;}
+.modal-close:hover{color:var(--amber);}
+.modal-tag{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.4em;color:var(--amber);text-transform:uppercase;margin-bottom:1.5rem;}
+.modal-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin-bottom:1.5rem;}
+.modal-meta{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.3em;color:var(--fog);padding-bottom:2rem;border-bottom:1px solid rgba(200,131,58,.2);margin-bottom:2.5rem;display:flex;gap:2rem;flex-wrap:wrap;}
+.modal-body{line-height:1.9;color:rgba(245,239,230,.85);}
+.modal-body p{margin-bottom:1.5rem;font-size:1.05rem;}
+.modal-body h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--glow);margin:2.5rem 0 1rem;}
+.modal-loading{display:flex;flex-direction:column;align-items:center;padding:5rem 0;gap:1.5rem;}
+.modal-loading p{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.3em;color:var(--fog);}
+.modal-ad{background:var(--deep);border:1px dashed rgba(200,131,58,.2);padding:1.5rem;text-align:center;margin:2.5rem 0;font-family:'DM Mono',monospace;font-size:.6rem;color:var(--fog);}
+.related{margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(200,131,58,.15);}
+.related h4{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.4em;color:var(--amber);margin-bottom:1.5rem;text-transform:uppercase;}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.related-item{background:var(--card);padding:1.5rem;cursor:pointer;border:1px solid transparent;transition:all .3s;}
+.related-item:hover{border-color:rgba(200,131,58,.2);transform:translateY(-2px);}
+.related-item .card-tag{font-size:.5rem;}
+.related-item .card-title{font-size:1rem;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* BACK TO TOP */
+.back-top{position:fixed;bottom:2rem;right:2rem;background:var(--blood);border:none;color:var(--parchment);width:48px;height:48px;cursor:pointer;font-size:1.2rem;z-index:50;transition:all .3s;opacity:0;pointer-events:none;}
+.back-top.show{opacity:1;pointer-events:all;}
+.back-top:hover{background:#a02020;transform:translateY(-3px);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  header{padding:1rem 1.5rem;}
+  nav .hide-mobile{display:none;}
+  section{padding:3rem 1.5rem;}
+  .hero{padding:5rem 1.5rem 3rem;}
+  .hero-stats{position:static;margin-top:2rem;justify-content:flex-start;}
+  .featured{grid-template-columns:1fr;}
+  .gen-controls{grid-template-columns:1fr;}
+  .aff-grid{grid-template-columns:1fr 1fr;}
+  .map-grid{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .sub-form{flex-direction:column;}
+  .sub-input{border-right:1px solid rgba(245,239,230,.3);}
+  .sub-perks{flex-wrap:wrap;gap:1.5rem;}
+  .quiz-opts{grid-template-columns:1fr;}
+  .related-grid{grid-template-columns:1fr;}
+  .modal-meta{flex-direction:column;gap:.5rem;}
+  .feat-main{padding:2.5rem;}
+}
+@media(max-width:600px){
+  .aff-grid{grid-template-columns:1fr;}
+  .map-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .cards-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:3rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#">Terra Ignota<span>Misterios Sin Resolver</span></a>
+  <nav>
+    <a href="#casos" class="hide-mobile">Casos</a>
+    <a href="#generar" class="hide-mobile">Generador IA</a>
+    <a href="#ranking" class="hide-mobile">Top 10</a>
+    <a href="#viajes" class="hide-mobile">Viajes</a>
+    <a href="#newsletter" class="nav-cta">Newsletter Gratis</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-eyebrow">── Volumen I · 2026 · Casos Activos</div>
+  <h1>Lugares que<br><em>nadie puede</em><br>explicar</h1>
+  <p class="hero-sub">Expediciones a los rincones más remotos y perturbadores de la Tierra. Casos sin resolver, fenómenos imposibles y las historias que la ciencia no ha podido cerrar.</p>
+  <div class="hero-actions">
+    <button class="btn-primary" onclick="document.getElementById('casos').scrollIntoView({behavior:'smooth'})">Explorar Casos</button>
+    <button class="btn-secondary" onclick="document.getElementById('generar').scrollIntoView({behavior:'smooth'})">Generar con IA</button>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">47</div><div class="stat-label">Casos Activos</div></div>
+    <div class="stat"><div class="stat-num">23</div><div class="stat-label">Países</div></div>
+    <div class="stat"><div class="stat-num">0</div><div class="stat-label">Resueltos</div></div>
+  </div>
+</div>
+
+<!-- BAND -->
+<div class="band">
+  <div class="band-inner">
+    <div class="band-text">✦ ISLA DE LAS MUÑECAS · MEXICO &nbsp; ✦ ZONA DEL SILENCIO · DURANGO &nbsp; ✦ PUERTA DE HAYU MARCA · PERU &nbsp; ✦ LAGO ROOPKUND · INDIA &nbsp; ✦ BOSQUE AOKIGAHARA · JAPON &nbsp; ✦ PUENTE OVERTOUN · ESCOCIA &nbsp; ✦ PASO DYATLOV · RUSIA &nbsp; ✦ CUEVA DE LOLTUN · YUCATAN &nbsp; ✦ TRIÁNGULO BERMUDAS · ATLÁNTICO &nbsp; ✦ BIGELOW RANCH · UTAH &nbsp; ✦ ISLA NORTH SENTINEL · INDIA &nbsp; ✦ CUEVA MOVILE · RUMANIA &nbsp; ✦ ISLA DE LAS MUÑECAS · MEXICO &nbsp; ✦ ZONA DEL SILENCIO · DURANGO &nbsp; ✦ PUERTA DE HAYU MARCA · PERU &nbsp; ✦ LAGO ROOPKUND · INDIA &nbsp; ✦ BOSQUE AOKIGAHARA · JAPON &nbsp; ✦ PUENTE OVERTOUN · ESCOCIA &nbsp; ✦ PASO DYATLOV · RUSIA &nbsp; ✦ CUEVA DE LOLTUN · YUCATAN &nbsp;</div>
+  </div>
+</div>
+
+<!-- AD SLOT TOP -->
+<div class="ad-slot ad-slot-wide">
+  <!-- GOOGLE ADSENSE: Reemplaza esto con tu código de anuncio -->
+  <span>[ Espacio Publicitario — Google AdSense ]</span>
+</div>
+
+<!-- FEATURED + CASES -->
+<section id="casos" style="background:#0d0a06;">
+  <div class="section-label">Casos Destacados</div>
+  <div class="featured">
+    <div class="feat-main" onclick="openArticle('dyatlov')">
+      <div class="feat-num">01</div>
+      <div class="card-tag">✦ Rusia · Montañas Ural · Feb 1959</div>
+      <h2 class="card-title">El Paso Dyatlov: 9 excursionistas, cero respuestas</h2>
+      <p class="card-excerpt">Nueve esquiadores expertos muertos en los Urales. Las tiendas cortadas desde adentro. Cuerpos en ropa interior a -30°C. Fracturas internas sin marcas externas. Piel de color naranja. El expediente soviético sigue clasificado.</p>
+      <div class="card-footer">
+        <span class="card-loc">61.7°N, 59.4°E</span>
+        <span class="card-difficulty diff-alto">Nivel: Alto</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </div>
+    <div class="feat-side">
+      <div class="card" onclick="openArticle('zona-silencio')">
+        <div class="card-tag">✦ México · Durango</div>
+        <h3 class="card-title">La Zona del Silencio donde las señales mueren</h3>
+        <p class="card-excerpt">700km de CDMX. Radios muertos. Brújulas que mienten. Meteoritos que caen como imantados. La NASA envió una misión. Nunca publicó los resultados.</p>
+        <div class="card-footer"><span class="card-loc">27.5°N, 103.8°O</span><span class="card-arrow">→</span></div>
+      </div>
+      <div class="card" onclick="openArticle('roopkund')">
+        <div class="card-tag">✦ India · Himalaya</div>
+        <h3 class="card-title">500 esqueletos a 5,000 metros de altura</h3>
+        <p class="card-excerpt">En 1942 apareció un lago lleno de huesos humanos en el Himalaya. El ADN reveló que venían de tres continentes distintos. Nadie sabe qué los reunió ahí.</p>
+        <div class="card-footer"><span class="card-loc">30.2°N, 79.7°E</span><span class="card-arrow">→</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRID ARTICLES -->
+<section style="background:#0a0805;padding-top:1rem;">
+  <div class="cards-grid">
+    <div class="card" onclick="openArticle('munecas')"><div class="card-tag">✦ México · Xochimilco</div><h3 class="card-title">La Isla de las Muñecas</h3><p class="card-excerpt">50 años colgando muñecas para calmar a una niña muerta. El creador murió exactamente donde ella murió, el mismo día de la semana.</p><div class="card-footer"><span class="card-loc">19.2°N, 99.0°O</span><span class="card-difficulty diff-medio">Medio</span></div></div>
+    <div class="card" onclick="openArticle('aokigahara')"><div class="card-tag">✦ Japón · Monte Fuji</div><h3 class="card-title">Aokigahara: el bosque que desorienta</h3><p class="card-excerpt">GPS inútil. Brújulas giradas. La policía dejó de publicar estadísticas. Los guías encuentran objetos personales colgados de los árboles.</p><div class="card-footer"><span class="card-loc">35.4°N, 138.6°E</span><span class="card-difficulty diff-alto">Alto</span></div></div>
+    <div class="card" onclick="openArticle('hayu-marca')"><div class="card-tag">✦ Perú · Puno</div><h3 class="card-title">Puerta de Hayu Marca</h3><p class="card-excerpt">Un guía soñó con esta roca antes de encontrarla. Los Incas decían que era la puerta al mundo de los dioses. La pequeña cavidad central nunca ha sido explicada.</p><div class="card-footer"><span class="card-loc">16.5°S, 69.5°O</span><span class="card-difficulty diff-bajo">Bajo</span></div></div>
+    <div class="card" onclick="openArticle('overtoun')"><div class="card-tag">✦ Escocia · Dumbarton</div><h3 class="card-title">El puente donde los perros saltan solos</h3><p class="card-excerpt">Más de 600 perros han saltado desde el mismo punto exacto del Puente Overtoun desde 1950. Algunos sobreviven. Vuelven a saltar.</p><div class="card-footer"><span class="card-loc">55.9°N, 4.5°O</span><span class="card-difficulty diff-medio">Medio</span></div></div>
+    <div class="card" onclick="openArticle('movimiento-piedras')"><div class="card-tag">✦ EE.UU · Death Valley</div><h3 class="card-title">Las piedras que navegan solas</h3><p class="card-excerpt">Huellas de 300 metros. Nadie las vio moverse en 70 años. La explicación científica de 2014 fue más perturbadora que el misterio original.</p><div class="card-footer"><span class="card-loc">36.5°N, 117.1°O</span><span class="card-difficulty diff-bajo">Bajo</span></div></div>
+    <div class="card" onclick="openArticle('loltun')"><div class="card-tag">✦ México · Yucatán</div><h3 class="card-title">Grutas de Loltún: voces del inframundo</h3><p class="card-excerpt">Los Mayas las llamaban la entrada al Xibalbá. Los arqueólogos que exploran los túneles más profundos reportan haber escuchado voces. Algunos no vuelven al fondo.</p><div class="card-footer"><span class="card-loc">20.1°N, 89.6°O</span><span class="card-difficulty diff-alto">Alto</span></div></div>
+    <div class="card" onclick="openArticle('movile')"><div class="card-tag">✦ Rumanía · Dobrogea</div><h3 class="card-title">Cueva Movile: ecosistema del pasado</h3><p class="card-excerpt">Sellada 5 millones de años. Sin luz solar. Sin conexión con el exterior. Dentro viven 48 especies que no existen en ningún otro lugar de la Tierra.</p><div class="card-footer"><span class="card-loc">43.8°N, 28.5°E</span><span class="card-difficulty diff-medio">Medio</span></div></div>
+    <div class="card" onclick="openArticle('sentinel')"><div class="card-tag">✦ India · Golfo de Bengala</div><h3 class="card-title">Isla North Sentinel: la última frontera</h3><p class="card-excerpt">Sus habitantes matan a todo aquel que se acerca. El gobierno indio los protege. Llevamos 60,000 años sin contacto real. Lo que ocurre adentro, nadie lo sabe.</p><div class="card-footer"><span class="card-loc">11.5°N, 92.2°E</span><span class="card-difficulty diff-alto">Alto</span></div></div>
+    <div class="card" onclick="openArticle('bigelow')"><div class="card-tag">✦ EE.UU · Utah</div><h3 class="card-title">Bigelow Ranch: 50 años de terror documentado</h3><p class="card-excerpt">Ganado mutilado sin herramientas conocidas. Poltergeist grabado en video. El gobierno compró la propiedad. Los archivos son clasificados.</p><div class="card-footer"><span class="card-loc">40.2°N, 109.8°O</span><span class="card-difficulty diff-alto">Alto</span></div></div>
+  </div>
+</section>
+
+<!-- AD SLOT MID -->
+<div class="ad-slot">
+  <!-- GOOGLE ADSENSE: Anuncio de display rectangle -->
+  <span>[ Espacio Publicitario — 300x250 ]</span>
+</div>
+
+<!-- AI GENERATOR -->
+<section id="generar" style="background:linear-gradient(180deg,var(--ink) 0%,#120d08 100%);">
+  <div class="section-label">Generador IA · Exclusivo</div>
+  <div style="max-width:860px;margin:0 auto;">
+    <h2 class="section-title" style="text-align:center;">Descubre el siguiente misterio</h2>
+    <p style="text-align:center;color:var(--fog);margin-bottom:3rem;line-height:1.7;">Nuestra inteligencia artificial investiga y redacta casos reales de lugares remotos según tus preferencias</p>
+  </div>
+  <div class="gen-wrap">
+    <h2 class="gen-title">✦ Configurar Investigación</h2>
+    <p class="gen-sub">Elige región, tipo de misterio e idioma. La IA hará el resto.</p>
+    <div class="gen-controls">
+      <select class="gen-select" id="regionSel">
+        <option value="">— Región —</option>
+        <option>América Latina</option><option>Asia</option><option>Europa</option>
+        <option>África</option><option>Oceanía</option><option>Ártico / Antártida</option>
+        <option>Medio Oriente</option><option>Cualquier lugar</option>
+      </select>
+      <select class="gen-select" id="tipoSel">
+        <option value="">— Tipo de misterio —</option>
+        <option>Desapariciones inexplicables</option><option>Fenómenos atmosféricos</option>
+        <option>Ruinas antiguas sin explicación</option><option>Criaturas no identificadas</option>
+        <option>Actividad paranormal documentada</option><option>Casos de viajeros perdidos</option>
+        <option>Anomalías geológicas</option><option>Rituales ancestrales secretos</option>
+      </select>
+      <select class="gen-select" id="toneSel">
+        <option value="">— Tono —</option>
+        <option>Periodismo de investigación</option><option>Crónica de viaje</option>
+        <option>Terror atmosférico</option><option>Divulgación científica</option>
+        <option>Relato histórico</option>
+      </select>
+    </div>
+    <button class="gen-btn" id="genBtn" onclick="generateMystery()">✦ &nbsp; REVELAR EL MISTERIO</button>
+    <div class="output-box" id="outputBox">
+      <div id="outputContent"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOP 10 RANKING -->
+<section id="ranking" style="background:#0d0a06;">
+  <div class="section-label">Ranking Global</div>
+  <h2 class="section-title">Los 10 lugares más perturbadores</h2>
+  <p style="color:var(--fog);max-width:500px;margin-bottom:2rem;line-height:1.7;">Ordenados por densidad de casos sin resolver y nivel de actividad anómala reportada.</p>
+  <div class="ranking-list">
+    <div class="rank-item" onclick="openArticle('dyatlov')"><div class="rank-num">01</div><div class="rank-content"><div class="rank-title">Paso Dyatlov — Rusia</div><div class="rank-desc">El caso más estudiado del siglo XX sin resolución. Intervención militar soviética. Archivos aún clasificados.</div><div class="rank-meta">61.7°N, 59.4°E · CASO ABIERTO</div></div><span style="color:var(--amber);font-size:1.5rem;margin-left:auto;">→</span></div>
+    <div class="rank-item" onclick="openArticle('bigelow')"><div class="rank-num">02</div><div class="rank-content"><div class="rank-title">Bigelow Ranch — Utah, EE.UU</div><div class="rank-desc">Más de 100 incidentes documentados. Comprado por el gobierno. Todos los archivos sellados.</div><div class="rank-meta">40.2°N, 109.8°O · PROPIEDAD FEDERAL</div></div><span style="color:var(--amber);font-size:1.5rem;margin-left:auto;">→</span></div>
+    <div class="rank-item" onclick="openArticle('aokigahara')"><div class="rank-num">03</div><div class="rank-content"><div class="rank-title">Bosque Aokigahara — Japón</div><div class="rank-desc">Anomalías magnéticas confirmadas. Estadísticas de incidentes clasificadas por el gobierno japonés desde 2004.</div><div class="rank-meta">35.4°N, 138.6°E · ZONA RESTRINGIDA</div></div><span style="color:var(--amber);font-size:1.5rem;margin-left:auto;">→</span></div>
+    <div class="rank-item" onclick="openArticle('sentinel')"><div class="rank-num">04</div><div class="rank-content"><div class="rank-title">Isla North Sentinel — India</div><div class="rank-desc">Civilización completamente aislada. Acceso prohibido por ley. Lo que ocurre adentro: desconocido.</div><div class="rank-meta">11.5°N, 92.2°E · ACCESO ILEGAL</div></div><span style="color:var(--amber);font-size:1.5rem;margin-left:auto;">→</span></div>
+    <div class="rank-item" onclick="openArticle('zona-silencio')"><div class="rank-num">05</div><div class="rank-content"><div class="rank-title">Zona del Silencio — México</div><div class="rank-desc">Latitud 27° Norte — misma que el Triángulo de las Bermudas y el desierto del Tíbet. Anomalía global sin explicación.</div><div class="rank-meta">27.5°N, 103.8°O · ACTIVO</div></div><span style="color:var(--amber);font-size:1.5rem;margin-left:auto;">→</span></div>
+    <div class="rank-item" onclick="openArticle('movile')"><div class="rank-num">06</div><div class="rank-content"><div class="rank-title">Cueva Movile — Rumanía</div><div class="rank-desc">Ecosistema sellado 5 millones de años. Las especies que viven ahí son imposibles según la biología convencional.</div><div class="rank-meta">43.8°N, 28.5°E · ACCESO RESTRINGIDO</div></div><span style="color:var(--amber);font-size:1.5rem;margin-left:auto;">→</span></div>
+    <div class="rank-item" onclick="openArticle('roopkund')"><div class="rank-num">07</div><div class="rank-content"><div class="rank-title">Lago Roopkund — India</div><div class="rank-desc">500 esqueletos de tres continentes en un lago de alta montaña. El ADN confirmó lo imposible: murieron en momentos distintos.</div><div class="rank-meta">30.2°N, 79.7°E · ACTIVO</div></div><span style="color:var(--amber);font-size:1.5rem;margin-left:auto;">→</span></div>
+    <div class="rank-item" onclick="openArticle('overtoun')"><div class="rank-num">08</div><div class="rank-content"><div class="rank-title">Puente Overtoun — Escocia</div><div class="rank-desc">El único lugar documentado donde animales realizan comportamiento suicida repetitivo en el mismo punto exacto.</div><div class="rank-meta">55.9°N, 4.5°O · ACTIVO</div></div><span style="color:var(--amber);font-size:1.5rem;margin-left:auto;">→</span></div>
+    <div class="rank-item" onclick="openArticle('hayu-marca')"><div class="rank-num">09</div><div class="rank-content"><div class="rank-title">Puerta de Hayu Marca — Perú</div><div class="rank-desc">Roca tallada con precisión imposible para la época. Los visitantes reportan mareos y visiones en la cavidad central.</div><div class="rank-meta">16.5°S, 69.5°O · ACTIVO</div></div><span style="color:var(--amber);font-size:1.5rem;margin-left:auto;">→</span></div>
+    <div class="rank-item" onclick="openArticle('loltun')"><div class="rank-num">10</div><div class="rank-content"><div class="rank-title">Grutas de Loltún — México</div><div class="rank-desc">Los arqueólogos han encontrado evidencia de ocupación humana de hace 3,000 años. La sección más profunda nunca fue explorada completamente.</div><div class="rank-meta">20.1°N, 89.6°O · PARCIALMENTE EXPLORADO</div></div><span style="color:var(--amber);font-size:1.5rem;margin-left:auto;">→</span></div>
+  </div>
+</section>
+
+<!-- AD SLOT -->
+<div class="ad-slot">
+  <!-- GOOGLE ADSENSE: Leaderboard 728x90 -->
+  <span>[ Espacio Publicitario — Leaderboard 728x90 ]</span>
+</div>
+
+<!-- MAPA / LOCACIONES -->
+<section style="background:#0a0805;">
+  <div class="section-label">Mapa de Anomalías</div>
+  <h2 class="section-title">Coordenadas del misterio</h2>
+  <div class="map-grid">
+    <div class="map-item" onclick="openArticle('dyatlov')"><div class="map-dot"></div><div class="map-coords">61.7°N · 59.4°E</div><div class="map-name">Paso Dyatlov</div><div class="map-country">🇷🇺 Rusia</div></div>
+    <div class="map-item" onclick="openArticle('aokigahara')"><div class="map-dot"></div><div class="map-coords">35.4°N · 138.6°E</div><div class="map-name">Bosque Aokigahara</div><div class="map-country">🇯🇵 Japón</div></div>
+    <div class="map-item" onclick="openArticle('roopkund')"><div class="map-dot"></div><div class="map-coords">30.2°N · 79.7°E</div><div class="map-name">Lago Roopkund</div><div class="map-country">🇮🇳 India</div></div>
+    <div class="map-item" onclick="openArticle('zona-silencio')"><div class="map-dot"></div><div class="map-coords">27.5°N · 103.8°O</div><div class="map-name">Zona del Silencio</div><div class="map-country">🇲🇽 México</div></div>
+    <div class="map-item" onclick="openArticle('hayu-marca')"><div class="map-dot"></div><div class="map-coords">16.5°S · 69.5°O</div><div class="map-name">Puerta Hayu Marca</div><div class="map-country">🇵🇪 Perú</div></div>
+    <div class="map-item" onclick="openArticle('movile')"><div class="map-dot"></div><div class="map-coords">43.8°N · 28.5°E</div><div class="map-name">Cueva Movile</div><div class="map-country">🇷🇴 Rumanía</div></div>
+    <div class="map-item" onclick="openArticle('sentinel')"><div class="map-dot"></div><div class="map-coords">11.5°N · 92.2°E</div><div class="map-name">Isla North Sentinel</div><div class="map-country">🇮🇳 India</div></div>
+    <div class="map-item" onclick="openArticle('overtoun')"><div class="map-dot"></div><div class="map-coords">55.9°N · 4.5°O</div><div class="map-name">Puente Overtoun</div><div class="map-country">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia</div></div>
+    <div class="map-item" onclick="openArticle('bigelow')"><div class="map-dot"></div><div class="map-coords">40.2°N · 109.8°O</div><div class="map-name">Bigelow Ranch</div><div class="map-country">🇺🇸 EE.UU</div></div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section style="background:#0d0a06;">
+  <div class="section-label">Quiz Interactivo</div>
+  <h2 class="section-title" style="text-align:center;margin-bottom:.5rem;">¿Cuánto sabes de los grandes misterios?</h2>
+  <p style="text-align:center;color:var(--fog);margin-bottom:3rem;">Pon a prueba tu conocimiento sobre los casos más inexplicables del planeta</p>
+  <div class="quiz-wrap" id="quizWrap">
+    <div id="quizInner"></div>
+  </div>
+</section>
+
+<!-- EPISODES / PODCAST -->
+<section style="background:#0a0805;">
+  <div class="section-label">Serie de Episodios</div>
+  <h2 class="section-title">Investigaciones en profundidad</h2>
+  <p style="color:var(--fog);max-width:500px;margin-bottom:1rem;line-height:1.7;">Artículos extensos generados por IA con análisis completo de cada caso</p>
+  <div class="episode-list">
+    <div class="episode" onclick="openArticle('dyatlov')"><div class="ep-play">▶</div><div><div class="ep-num">EP. 01 · RUSIA · 1959</div><div class="ep-title">El Paso Dyatlov: Análisis Completo</div><div class="ep-desc">Todo lo que sabemos, todo lo que no sabemos y por qué el caso sigue abierto.</div></div><span class="ep-duration">~12 min lectura</span></div>
+    <div class="episode" onclick="openArticle('zona-silencio')"><div class="ep-play">▶</div><div><div class="ep-num">EP. 02 · MÉXICO · 1966</div><div class="ep-title">La Zona del Silencio: Investigación NASA</div><div class="ep-desc">La misión espacial que nadie recuerda y el desierto que absorbe señales.</div></div><span class="ep-duration">~10 min lectura</span></div>
+    <div class="episode" onclick="openArticle('movile')"><div class="ep-play">▶</div><div><div class="ep-num">EP. 03 · RUMANÍA · 1986</div><div class="ep-title">Cueva Movile: Vida Imposible</div><div class="ep-desc">Las criaturas que desafían todo lo que sabemos sobre la evolución.</div></div><span class="ep-duration">~8 min lectura</span></div>
+    <div class="episode" onclick="openArticle('sentinel')"><div class="ep-play">▶</div><div><div class="ep-num">EP. 04 · INDIA · PRESENTE</div><div class="ep-title">North Sentinel: La Isla Prohibida</div><div class="ep-desc">El último pueblo que rechaza el contacto con la humanidad moderna.</div></div><span class="ep-duration">~9 min lectura</span></div>
+    <div class="episode" onclick="openArticle('bigelow')"><div class="ep-play">▶</div><div><div class="ep-num">EP. 05 · UTAH · 1950–HOY</div><div class="ep-title">Bigelow Ranch: El Rancho del Gobierno</div><div class="ep-desc">Por qué el Pentágono pagó millones por una granja en el desierto de Utah.</div></div><span class="ep-duration">~11 min lectura</span></div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="subscribe" id="newsletter">
+  <h2>El misterio llega cada semana</h2>
+  <p>Suscríbete y recibe cada viernes un caso sin resolver de algún rincón remoto del planeta. Gratis. Sin spam. Sin algoritmos.</p>
+  <div class="sub-form">
+    <input class="sub-input" type="email" placeholder="tu@email.com" id="emailInput">
+    <button class="sub-btn" onclick="handleSub()">Quiero Suscribirme</button>
+  </div>
+  <p id="subMsg" style="margin-top:1rem;font-size:.9rem;color:var(--glow);display:none;">✦ Bienvenido a Terra Ignota. Revisa tu correo.</p>
+  <div class="sub-perks">
+    <div class="perk"><div class="perk-icon">📬</div><div class="perk-text">1 caso por semana</div></div>
+    <div class="perk"><div class="perk-icon">🗺️</div><div class="perk-text">Coordenadas exactas</div></div>
+    <div class="perk"><div class="perk-icon">🔍</div><div class="perk-text">Análisis exclusivos</div></div>
+    <div class="perk"><div class="perk-icon">🆓</div><div class="perk-text">100% Gratuito</div></div>
+  </div>
+</div>
+
+<!-- AFFILIATES -->
+<div class="aff-section" id="viajes">
+  <div class="section-label">Socios de Viaje · Monetizado</div>
+  <div class="aff-intro">
+    <h2 class="section-title">Visita estos lugares tú mismo</h2>
+    <p>Nuestros socios te ayudan a llegar a los destinos más remotos del planeta con los mejores precios garantizados.</p>
+  </div>
+  <div class="aff-grid">
+    <a class="aff-card" href="https://www.booking.com" target="_blank" rel="noopener">
+      <div class="aff-badge">Socio</div>
+      <div class="aff-icon">🏨</div>
+      <div class="aff-name">Booking.com</div>
+      <div class="aff-desc">Hoteles y alojamientos únicos cerca de los lugares más misteriosos</div>
+      <div class="aff-commission">↑ hasta 40% comisión</div>
+    </a>
+    <a class="aff-card" href="https://www.skyscanner.com" target="_blank" rel="noopener">
+      <div class="aff-badge">Socio</div>
+      <div class="aff-icon">✈️</div>
+      <div class="aff-name">Skyscanner</div>
+      <div class="aff-desc">Vuelos al mejor precio para llegar a destinos remotos del mundo</div>
+      <div class="aff-commission">↑ comisión por búsqueda</div>
+    </a>
+    <a class="aff-card" href="https://www.viator.com" target="_blank" rel="noopener">
+      <div class="aff-badge">Socio</div>
+      <div class="aff-icon">🗺️</div>
+      <div class="aff-name">Viator Tours</div>
+      <div class="aff-desc">Guías locales especializados en destinos misteriosos y expediciones</div>
+      <div class="aff-commission">↑ 8% por reserva</div>
+    </a>
+    <a class="aff-card" href="https://www.amazon.com" target="_blank" rel="noopener">
+      <div class="aff-badge">Socio</div>
+      <div class="aff-icon">📚</div>
+      <div class="aff-name">Amazon Libros</div>
+      <div class="aff-desc">Guías de viaje, libros de misterio y equipamiento para expediciones</div>
+      <div class="aff-commission">↑ 4–10% por compra</div>
+    </a>
+  </div>
+  <!-- AD SLOT BOTTOM -->
+  <div class="ad-slot" style="margin:3rem 0 0;">
+    <!-- GOOGLE ADSENSE: Footer banner -->
+    <span>[ Espacio Publicitario — Banner Footer ]</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="#">Terra Ignota<span>© 2026 · Todos los derechos reservados</span></a>
+      <p>Investigaciones sobre los lugares más remotos y misteriosos del planeta. Generado con inteligencia artificial y curación editorial.</p>
+      <br>
+      <a class="donate-btn" href="https://ko-fi.com" target="_blank" rel="noopener">☕ Apoya el proyecto</a>
+    </div>
+    <div class="footer-col">
+      <h4>Casos</h4>
+      <a href="#" onclick="openArticle('dyatlov');return false;">Paso Dyatlov</a>
+      <a href="#" onclick="openArticle('zona-silencio');return false;">Zona del Silencio</a>
+      <a href="#" onclick="openArticle('aokigahara');return false;">Aokigahara</a>
+      <a href="#" onclick="openArticle('roopkund');return false;">Lago Roopkund</a>
+      <a href="#" onclick="openArticle('sentinel');return false;">North Sentinel</a>
+    </div>
+    <div class="footer-col">
+      <h4>Secciones</h4>
+      <a href="#casos">Casos Destacados</a>
+      <a href="#generar">Generador IA</a>
+      <a href="#ranking">Top 10</a>
+      <a href="#newsletter">Newsletter</a>
+      <a href="#viajes">Viajes</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Política de Privacidad</a>
+      <a href="#">Términos de Uso</a>
+      <a href="#">Aviso de Cookies</a>
+      <a href="#">Contacto</a>
+      <a href="#">Anúnciate aquí</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">TERRA IGNOTA · MISTERIOS · VIAJES · CASOS SIN RESOLVER · 2026</span>
+    <div class="footer-legal">
+      <a href="#">Privacidad</a>
+      <a href="#">Términos</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">← Volver al archivo</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+// Cursor
+const cur = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX-4+'px'; cur.style.top = e.clientY-4+'px';
+  ring.style.left = e.clientX-16+'px'; ring.style.top = e.clientY-16+'px';
+});
+
+// Back to top
+window.addEventListener('scroll', () => {
+  document.getElementById('backTop').classList.toggle('show', scrollY > 400);
+});
+
+// Articles DB
+const DB = {
+  'dyatlov':{tag:'Rusia · Montañas Ural',title:'El Paso Dyatlov: 9 excursionistas, cero respuestas',coords:'61.7°N, 59.4°E',date:'Febrero 1959',duration:'~12 min lectura',prompt:'Escribe un artículo largo y muy detallado sobre el incidente del Paso Dyatlov en 1959. Incluye: quiénes eran los 9 excursionistas, la cronología exacta, cómo encontraron las tiendas cortadas desde adentro, los cuerpos en ropa interior a -30°C, las fracturas internas sin marcas externas, la piel naranja, el expediente soviético clasificado, las teorías más serias (avalancha de placa, infrasónico, pruebas militares), y el estado actual del caso. Usa subtítulos H3. Tono: periodismo de investigación literario en español. Mínimo 600 palabras.',related:['zona-silencio','bigelow','aokigahara']},
+  'zona-silencio':{tag:'México · Durango',title:'La Zona del Silencio: donde las señales mueren',coords:'27.5°N, 103.8°O',date:'Reportado desde 1966',duration:'~10 min lectura',prompt:'Escribe un artículo largo y detallado sobre La Zona del Silencio en Durango, México. Incluye: el descubrimiento del piloto Pemex, por qué fallan radios y brújulas, los meteoritos que caen con frecuencia anormal, la misión de la NASA que nunca publicó resultados, los avistamientos de luces, las criaturas albinas reportadas por lugareños, la conexión con el paralelo 27 (Bermudas, Tíbet), y cómo visitarla hoy. Usa subtítulos H3. Tono: crónica de viaje de misterio en español. Mínimo 600 palabras.',related:['munecas','loltun','hayu-marca']},
+  'roopkund':{tag:'India · Himalaya',title:'Lago Roopkund: 500 esqueletos a 5,000 metros',coords:'30.2°N, 79.7°E',date:'Descubierto en 1942',duration:'~9 min lectura',prompt:'Escribe un artículo largo sobre el Lago Roopkund en el Himalaya. Incluye: descubrimiento en 1942, los resultados del análisis de ADN que revelaron orígenes de tres continentes, las teorías sobre cómo murieron (granizo gigante, ceremonia), el paisaje dramático del Himalaya, y por qué el caso sigue abierto. Usa subtítulos H3. Tono literario de viajes y misterio en español. Mínimo 600 palabras.',related:['dyatlov','sentinel','movile']},
+  'munecas':{tag:'México · Xochimilco',title:'La Isla de las Muñecas: 50 años de devoción a una niña muerta',coords:'19.2°N, 99.0°O',date:'1950–2001',duration:'~8 min lectura',prompt:'Escribe un artículo largo sobre la Isla de las Muñecas en Xochimilco. Incluye: la historia de Don Julián Santana y la niña ahogada, descripción atmosférica de las muñecas colgadas y en descomposición, la muerte de Don Julián en el mismo canal exactamente donde murió la niña, cómo llegar hoy, testimonios de turistas, y las teorías sobre si las muñecas se mueven. Usa subtítulos H3. Tono de viajes oscuros en español. Mínimo 600 palabras.',related:['loltun','zona-silencio','hayu-marca']},
+  'aokigahara':{tag:'Japón · Monte Fuji',title:'Aokigahara: el bosque que desorienta a propósito',coords:'35.4°N, 138.6°E',date:'Documentado desde siglo XII',duration:'~10 min lectura',prompt:'Escribe un artículo largo sobre el Bosque Aokigahara al pie del Monte Fuji. Incluye: las anomalías magnéticas por depósitos volcánicos, la mitología japonesa del Jukai, el libro de Seicho Matsumoto que lo hizo famoso, los carteles que puso el gobierno, los objetos abandonados que encuentra la policía, el debate sobre publicar estadísticas, y cómo los guías describen la atmósfera. Usa subtítulos H3. Tono: reportaje oscuro en español. Mínimo 600 palabras.',related:['dyatlov','overtoun','bigelow']},
+  'hayu-marca':{tag:'Perú · Puno',title:'Puerta de Hayu Marca: el portal al mundo de los dioses',coords:'16.5°S, 69.5°O',date:'Descubierta en 1996',duration:'~8 min lectura',prompt:'Escribe un artículo largo sobre la Puerta de Hayu Marca en Puno, Perú. Incluye: el sueño del guía José Luis Delgado Mamani, las leyendas incas sobre la "puerta de los dioses", la cavidad circular en el centro de la roca, los testimonios de meditación y visiones de quienes la visitan, comparaciones con otras puertas falsas del mundo, y cómo llegar. Usa subtítulos H3. Tono místico y de viajes en español. Mínimo 600 palabras.',related:['loltun','munecas','zona-silencio']},
+  'overtoun':{tag:'Escocia · Dumbarton',title:'El puente donde los perros eligen caer',coords:'55.9°N, 4.5°O',date:'Casos documentados desde 1950',duration:'~9 min lectura',prompt:'Escribe un artículo largo sobre el Puente Overtoun en Escocia. Incluye: estadísticas de los saltos (más de 600 perros), testimonios de dueños, las investigaciones de biólogos y veterinarios, la teoría del olor a visón, las teorías sobrenaturales locales, la arquitectura del puente victoriano, y qué sucede cuando los perros sobreviven y vuelven al mismo punto. Usa subtítulos H3. Tono: crónica de terror atmosférico en español. Mínimo 600 palabras.',related:['aokigahara','bigelow','dyatlov']},
+  'movimiento-piedras':{tag:'EE.UU · Death Valley',title:'Las piedras que navegan solas en el Valle de la Muerte',coords:'36.5°N, 117.1°O',date:'Documentado desde 1940s',duration:'~7 min lectura',prompt:'Escribe un artículo sobre las sailing stones del Racetrack Playa en Death Valley. Incluye: décadas de misterio y teorías descartadas, las huellas de cientos de metros, la expedición de 2014 que finalmente las grabó en movimiento, la explicación del hielo y el viento, y por qué esa explicación es casi más fascinante que el misterio. Usa subtítulos H3. Tono divulgación aventurera en español.',related:['zona-silencio','bigelow','hayu-marca']},
+  'loltun':{tag:'México · Yucatán',title:'Grutas de Loltún y los sonidos del inframundo',coords:'20.1°N, 89.6°O',date:'Ocupadas hace más de 3,000 años',duration:'~9 min lectura',prompt:'Escribe un artículo largo sobre las Grutas de Loltún en Yucatán. Incluye: su nombre maya (flor de piedra), su papel como entrada al Xibalbá (inframundo maya), los hallazgos arqueológicos únicos (herramientas de hace 10,000 años, huesos de mamut), las pinturas rupestres, los sonidos extraños que reportan guías y arqueólogos, la sección inexplorada al fondo, y la experiencia de visitarlas. Usa subtítulos H3. Tono: arqueología de misterio en español. Mínimo 600 palabras.',related:['munecas','hayu-marca','zona-silencio']},
+  'movile':{tag:'Rumanía · Dobrogea',title:'Cueva Movile: ecosistema del pasado sellado 5 millones de años',coords:'43.8°N, 28.5°E',date:'Descubierta en 1986',duration:'~8 min lectura',prompt:'Escribe un artículo largo sobre la Cueva Movile en Rumanía. Incluye: su descubrimiento accidental en 1986, cómo sobreviven los seres sin luz solar (quimiosíntesis), las 48 especies endémicas que no existen en ningún otro lugar, las condiciones extremas (CO2 alto, ausencia de oxígeno), por qué el acceso está restringido a solo 4 científicos por año, y qué nos dice sobre la posibilidad de vida en otros planetas. Usa subtítulos H3. En español. Mínimo 600 palabras.',related:['sentinel','roopkund','movimiento-piedras']},
+  'sentinel':{tag:'India · Golfo de Bengala',title:'Isla North Sentinel: la última frontera de la humanidad',coords:'11.5°N, 92.2°E',date:'Aislamiento documentado desde 1880',duration:'~9 min lectura',prompt:'Escribe un artículo largo sobre la Isla North Sentinel. Incluye: quiénes son los Sentineleses, el incidente de John Chau en 2018, los intentos históricos de contacto, por qué el gobierno indio los protege con leyes específicas, lo que las fotografías aéreas han revelado, teorías sobre su origen, y por qué su aislamiento puede ser beneficioso para la humanidad. Usa subtítulos H3. Tono: periodismo de investigación en español. Mínimo 600 palabras.',related:['movile','roopkund','dyatlov']},
+  'bigelow':{tag:'EE.UU · Utah',title:'Bigelow Ranch: el rancho que compró el Pentágono',coords:'40.2°N, 109.8°O',date:'Incidentes desde 1950, compra federal 2016',duration:'~11 min lectura',prompt:'Escribe un artículo largo sobre el Skinwalker Ranch (Bigelow Ranch) en Utah. Incluye: los incidentes con ganado mutilado sin herramientas conocidas, los poltergeist grabados en video, la compra por el empresario Robert Bigelow, el programa secreto del Pentágono AATIP, por qué el gobierno selló los archivos, testimonios de investigadores científicos que trabajaron ahí, y el estado actual. Usa subtítulos H3. Tono: investigación periodística en español. Mínimo 600 palabras.',related:['dyatlov','aokigahara','zona-silencio']}
+};
+
+async function openArticle(id) {
+  const art = DB[id]; if(!art) return;
+  const modal = document.getElementById('modalOverlay');
+  const body = document.getElementById('modalBody');
+  modal.classList.add('open');
+  document.body.style.overflow='hidden';
+  body.innerHTML=`
+    <div class="modal-tag">✦ ${art.tag}</div>
+    <h1 class="modal-title">${art.title}</h1>
+    <div class="modal-meta"><span>${art.coords}</span><span>${art.date}</span><span>${art.duration}</span><span>Terra Ignota · IA</span></div>
+    <div class="modal-body"><div class="modal-loading"><div class="dots"><span></span><span></span><span></span></div><p>Investigando el caso...</p></div></div>`;
+  try {
+    const r = await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:art.prompt}]})});
+    const d = await r.json();
+    const txt = d.content?.map(b=>b.text||'').join('')||'Error al cargar.';
+    const html = txt.split('\n\n').filter(p=>p.trim()).map(p=>{
+      if(p.startsWith('###')) return `<h3>${p.replace(/^###\s*/,'')}</h3>`;
+      if(p.startsWith('##')) return `<h3>${p.replace(/^##\s*/,'')}</h3>`;
+      return `<p>${p.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')}</p>`;
+    }).join('');
+    const related = (art.related||[]).slice(0,3).map(rid=>{
+      const ra=DB[rid]; if(!ra) return '';
+      return `<div class="related-item" onclick="closeModal();setTimeout(()=>openArticle('${rid}'),300)"><div class="card-tag">✦ ${ra.tag}</div><div class="card-title">${ra.title}</div></div>`;
+    }).join('');
+    document.querySelector('#modalOverlay .modal-body').innerHTML=`
+      ${html}
+      <div class="modal-ad">[ Google AdSense — Anuncio en artículo ]</div>
+      <div class="related"><h4>Casos Relacionados</h4><div class="related-grid">${related}</div></div>`;
+  } catch(e) {
+    document.querySelector('#modalOverlay .modal-body').innerHTML='<p>Error de conexión. Intenta de nuevo.</p>';
+  }
+}
+
+function closeModal(){
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+async function generateMystery(){
+  const reg=document.getElementById('regionSel').value||'cualquier región';
+  const tipo=document.getElementById('tipoSel').value||'misterio inexplicable';
+  const tone=document.getElementById('toneSel').value||'periodismo de investigación';
+  const btn=document.getElementById('genBtn');
+  const box=document.getElementById('outputBox');
+  const cont=document.getElementById('outputContent');
+  btn.disabled=true; btn.textContent='⌛ Investigando...';
+  box.classList.add('show');
+  cont.innerHTML='<div class="dots"><span></span><span></span><span></span></div>';
+  const prompt=`Crea un caso de misterio verosímil sobre ${tipo} en ${reg}. 
+Formato: primera línea = nombre del lugar con coordenadas GPS aproximadas. Luego el texto.
+Incluye: nombre del lugar, coordenadas, qué ocurrió exactamente, cuándo fue descubierto, 
+evidencia encontrada, por qué no hay explicación, qué dicen los lugareños o científicos.
+Estilo: ${tone}. Máximo 300 palabras. En español.`;
+  try{
+    const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
+    const d=await r.json();
+    const txt=d.content?.map(b=>b.text||'').join('')||'Error.';
+    const lines=txt.split('\n').filter(l=>l.trim());
+    cont.innerHTML=`
+      <div class="output-title">${lines[0]}</div>
+      <div class="output-meta">✦ ${reg.toUpperCase()} · ${tipo.toUpperCase()}</div>
+      <div class="output-text">${lines.slice(1).join(' ')}</div>
+      <div class="share-btns">
+        <button class="share-btn" onclick="copyText()">📋 Copiar</button>
+        <button class="share-btn" onclick="generateMystery()">🔄 Nuevo caso</button>
+      </div>`;
+  }catch(e){cont.innerHTML='<p style="color:var(--fog)">Error de conexión. Intenta de nuevo.</p>';}
+  btn.disabled=false; btn.innerHTML='✦ &nbsp; REVELAR EL MISTERIO';
+}
+
+function copyText(){
+  const t=document.getElementById('outputContent').innerText;
+  navigator.clipboard.writeText(t).then(()=>alert('Copiado al portapapeles'));
+}
+
+// QUIZ
+const QUIZ=[
+  {q:"¿En qué año ocurrió el incidente del Paso Dyatlov?",opts:["1952","1959","1967","1971"],correct:1,exp:"El grupo liderado por Igor Dyatlov murió en febrero de 1959 en los Montes Urales, Rusia."},
+  {q:"¿Cuántos esqueletos se encontraron en el Lago Roopkund?",opts:["50","200","500","1000"],correct:2,exp:"Se encontraron aproximadamente 500 esqueletos humanos a 5,000 metros de altitud en el Himalaya."},
+  {q:"¿Qué hace única a la Cueva Movile en Rumanía?",opts:["Es la más profunda del mundo","Tiene un ecosistema sellado 5 millones de años","Tiene pinturas rupestres de 30,000 años","Está llena de cristales gigantes"],correct:1,exp:"La Cueva Movile tiene un ecosistema completamente aislado del exterior por 5 millones de años, con 48 especies únicas."},
+  {q:"¿Por qué es ilegal acercarse a la Isla North Sentinel?",opts:["Por contaminación radioactiva","Para proteger a sus habitantes del contacto","Por ser una base militar","Por ser patrimonio de la UNESCO"],correct:1,exp:"El gobierno de India protege a los Sentineleses de enfermedades y del contacto no deseado con el mundo exterior."},
+  {q:"¿Qué compró el Pentágono en Utah relacionado con misterios?",opts:["Una mina abandonada","El Rancho Bigelow (Skinwalker)","Un observatorio secreto","Unas cuevas nativas"],correct:1,exp:"El programa AATIP del gobierno estadounidense adquirió el Skinwalker Ranch para investigar fenómenos anómalos."},
+  {q:"¿En qué latitud exacta se encuentra la Zona del Silencio?",opts:["20° Norte","27° Norte","33° Norte","40° Norte"],correct:1,exp:"La Zona del Silencio está en el paralelo 27°N — la misma latitud que el Triángulo de las Bermudas y el desierto del Tíbet."},
+];
+let qIdx=0, score=0;
+function renderQuiz(){
+  const q=QUIZ[qIdx];
+  document.getElementById('quizInner').innerHTML=`
+    <div class="quiz-progress">Pregunta ${qIdx+1} de ${QUIZ.length} · Puntos: ${score}</div>
+    <div class="quiz-q" style="margin-top:1.5rem">${q.q}</div>
+    <div class="quiz-opts">${q.opts.map((o,i)=>`<button class="quiz-opt" onclick="answerQuiz(${i})">${o}</button>`).join('')}</div>
+    <div class="quiz-result" id="quizResult"></div>`;
+}
+function answerQuiz(i){
+  const q=QUIZ[qIdx];
+  const opts=document.querySelectorAll('.quiz-opt');
+  opts.forEach((o,idx)=>{o.disabled=true;if(idx===q.correct)o.classList.add('correct');else if(idx===i&&i!==q.correct)o.classList.add('wrong');});
+  const res=document.getElementById('quizResult');
+  if(i===q.correct){score++;res.innerHTML=`✦ ¡Correcto! ${q.exp}`;}
+  else{res.innerHTML=`✗ Incorrecto. ${q.exp}`;}
+  res.classList.add('show');
+  setTimeout(()=>{
+    qIdx++;
+    if(qIdx<QUIZ.length)renderQuiz();
+    else document.getElementById('quizInner').innerHTML=`<div style="text-align:center;padding:2rem"><div style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--glow);margin-bottom:1rem">Resultado Final</div><div style="font-size:3rem;font-weight:900;font-family:'Playfair Display',serif">${score}/${QUIZ.length}</div><p style="color:var(--fog);margin:1rem 0">${score>=5?'Experto en misterios. Terra Ignota te necesita.':score>=3?'Buen conocimiento. Sigue explorando.':'Aún queda mucho por descubrir.'}</p><button class="gen-btn" onclick="qIdx=0;score=0;renderQuiz()" style="margin-top:1rem">Intentar de nuevo</button></div>`;
+  },2500);
+}
+renderQuiz();
+
+function handleSub(){
+  const e=document.getElementById('emailInput').value;
+  if(e&&e.includes('@')){document.getElementById('subMsg').style.display='block';document.getElementById('emailInput').value='';}
+}
+
+document.getElementById('modalOverlay')
+.addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>
+
